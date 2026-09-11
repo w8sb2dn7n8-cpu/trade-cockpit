@@ -1,0 +1,37 @@
+name: Tägliche Signalberechnung
+
+on:
+  schedule:
+    - cron: "15 22 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-signals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Abhängigkeiten installieren
+        run: pip install -r requirements.txt
+
+      - name: Signale berechnen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_signals.py
+
+      - name: signals.json committen
+        run: |
+          git config user.name "trend-cockpit-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data/signals.json
+          git diff --quiet --cached || git commit -m "Signale aktualisiert: $(date -u +%Y-%m-%d)"
+          git push
