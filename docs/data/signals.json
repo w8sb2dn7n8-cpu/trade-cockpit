@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-09-10T22:15:00+00:00",
+  "demo": true,
+  "market_filter": {
+    "spy_price": 612.4,
+    "spy_sma200": 578.9,
+    "spy_momentum_6m_pct": 9.8,
+    "risk_on": true
+  },
+  "fx_eur_usd": 1.08,
+  "universe_count": 8,
+  "top_candidates": [
+    {
+      "symbol": "NVDA", "name": "NVIDIA Corp", "sector": "Information Technology",
+      "cluster": "A", "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
+      "price_usd": 187.3, "price_eur": 173.43, "sma50": 176.2, "sma200": 152.8,
+      "rsi14": 61.2, "atr14": 4.8, "momentum_pct": 34.1, "rel_strength_pct": 24.3, "dist_to_sma50_pct": 6.3,
+      "earnings_soon": false, "earnings_date": "2026-11-18",
+      "commentary_pro": "Der Kurs liegt klar ueber beiden gleitenden Durchschnitten, und das Momentum gehoert zu den staerksten im Universum.",
+      "commentary_con": "Die Bewertung ist ambitioniert, ein Grossteil der guten Nachrichten ist im Kurs bereits enthalten."
+    },
+    {
+      "symbol": "AVGO", "name": "Broadcom Inc", "sector": "Information Technology",
+      "cluster": "A", "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
+      "price_usd": 289.1, "price_eur": 267.69, "sma50": 271.4, "sma200": 231.0,
+      "rsi14": 58.4, "atr14": 6.9, "momentum_pct": 28.7, "rel_strength_pct": 18.9, "dist_to_sma50_pct": 6.5,
+      "earnings_soon": true, "earnings_date": "2026-09-15",
+      "commentary_pro": "Breiter Aufwaertstrend mit stabiler relativer Staerke gegenueber dem Gesamtmarkt.",
+      "commentary_con": "Quartalszahlen stehen in Kuerze an, das erhoeht kurzfristig die Kursschwankung."
+    },
+    {
+      "symbol": "COST", "name": "Costco Wholesale", "sector": "Consumer Staples",
+      "cluster": "B", "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40.",
+      "price_usd": 901.2, "price_eur": 834.44, "sma50": 908.5, "sma200": 862.1,
+      "rsi14": 38.6, "atr14": 14.2, "momentum_pct": 11.4, "rel_strength_pct": 1.6, "dist_to_sma50_pct": -0.8,
+      "earnings_soon": false, "earnings_date": null,
+      "commentary_pro": "Langfristig intakter Trend, der aktuelle Ruecksetzer liegt nah am SMA50 und wirkt technisch moderat.",
+      "commentary_con": "Die relative Staerke zum Gesamtmarkt ist zuletzt nur noch schwach positiv."
+    },
+    {
+      "symbol": "LLY", "name": "Eli Lilly & Co", "sector": "Health Care",
+      "cluster": "A", "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
+      "price_usd": 782.5, "price_eur": 724.54, "sma50": 748.9, "sma200": 668.3,
+      "rsi14": 64.8, "atr14": 16.1, "momentum_pct": 22.6, "rel_strength_pct": 12.8, "dist_to_sma50_pct": 4.5,
+      "earnings_soon": false, "earnings_date": "2026-10-30",
+      "commentary_pro": "Deutlicher, breiter Aufwaertstrend mit hoher relativer Staerke im Gesundheitssektor.",
+      "commentary_con": "Der RSI naehert sich einem ueberkauften Bereich, kurzfristige Konsolidierung waere technisch normal."
+    },
+    {
+      "symbol": "JPM", "name": "JPMorgan Chase", "sector": "Financials",
+      "cluster": "B", "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40.",
+      "price_usd": 268.9, "price_eur": 249.0, "sma50": 271.8, "sma200": 244.6,
+      "rsi14": 42.1, "atr14": 5.4, "momentum_pct": 9.1, "rel_strength_pct": -0.7, "dist_to_sma50_pct": -1.1,
+      "earnings_soon": false, "earnings_date": "2026-10-14",
+      "commentary_pro": "Aufwaertstrend intakt, aktueller Ruecksetzer bietet einen Einstieg nahe am SMA50.",
+      "commentary_con": "Relative Staerke gegenueber dem S&P 500 ist zuletzt leicht negativ geworden."
+    }
+  ],
+  "universe": [
+    {"symbol": "NVDA", "name": "NVIDIA Corp", "sector": "Information Technology", "cluster": "A", "cluster_reason": "Starker Trend.", "price_usd": 187.3, "price_eur": 173.43, "sma50": 176.2, "sma200": 152.8, "rsi14": 61.2, "atr14": 4.8, "momentum_pct": 34.1, "rel_strength_pct": 24.3, "dist_to_sma50_pct": 6.3},
+    {"symbol": "AVGO", "name": "Broadcom Inc", "sector": "Information Technology", "cluster": "A", "cluster_reason": "Starker Trend.", "price_usd": 289.1, "price_eur": 267.69, "sma50": 271.4, "sma200": 231.0, "rsi14": 58.4, "atr14": 6.9, "momentum_pct": 28.7, "rel_strength_pct": 18.9, "dist_to_sma50_pct": 6.5},
+    {"symbol": "COST", "name": "Costco Wholesale", "sector": "Consumer Staples", "cluster": "B", "cluster_reason": "Ruecksetzer.", "price_usd": 901.2, "price_eur": 834.44, "sma50": 908.5, "sma200": 862.1, "rsi14": 38.6, "atr14": 14.2, "momentum_pct": 11.4, "rel_strength_pct": 1.6, "dist_to_sma50_pct": -0.8},
+    {"symbol": "LLY", "name": "Eli Lilly & Co", "sector": "Health Care", "cluster": "A", "cluster_reason": "Starker Trend.", "price_usd": 782.5, "price_eur": 724.54, "sma50": 748.9, "sma200": 668.3, "rsi14": 64.8, "atr14": 16.1, "momentum_pct": 22.6, "rel_strength_pct": 12.8, "dist_to_sma50_pct": 4.5},
+    {"symbol": "JPM", "name": "JPMorgan Chase", "sector": "Financials", "cluster": "B", "cluster_reason": "Ruecksetzer.", "price_usd": 268.9, "price_eur": 249.0, "sma50": 271.8, "sma200": 244.6, "rsi14": 42.1, "atr14": 5.4, "momentum_pct": 9.1, "rel_strength_pct": -0.7, "dist_to_sma50_pct": -1.1},
+    {"symbol": "INTC", "name": "Intel Corp", "sector": "Information Technology", "cluster": "D", "cluster_reason": "Trendbruch: Kurs seit 2 Tagen unter SMA200.", "price_usd": 21.4, "price_eur": 19.81, "sma50": 23.8, "sma200": 25.6, "rsi14": 29.3, "atr14": 0.9, "momentum_pct": -18.2, "rel_strength_pct": -28.0, "dist_to_sma50_pct": -10.1},
+    {"symbol": "PFE", "name": "Pfizer Inc", "sector": "Health Care", "cluster": "D", "cluster_reason": "Trendbruch: SMA50 unter SMA200.", "price_usd": 24.6, "price_eur": 22.78, "sma50": 25.9, "sma200": 27.4, "rsi14": 33.7, "atr14": 0.6, "momentum_pct": -9.4, "rel_strength_pct": -19.2, "dist_to_sma50_pct": -5.0},
+    {"symbol": "KO", "name": "Coca-Cola Co", "sector": "Consumer Staples", "cluster": "C", "cluster_reason": "Kein klarer Trend.", "price_usd": 71.8, "price_eur": 66.48, "sma50": 71.2, "sma200": 69.9, "rsi14": 51.0, "atr14": 1.1, "momentum_pct": 3.2, "rel_strength_pct": -6.6, "dist_to_sma50_pct": 0.8}
+  ]
+}

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Trend-Cockpit</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trend-Cockpit">
+<meta name="theme-color" content="#14181C">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314181C'/%3E%3Cpath d='M15 68 L38 42 L55 58 L85 22' stroke='%23C7A15A' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314181C'/%3E%3Cpath d='M15 68 L38 42 L55 58 L85 22' stroke='%23C7A15A' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#14181C;
+    --surface:#1B2027;
+    --surface-raised:#232933;
+    --border:#2E353F;
+    --text:#ECE9E2;
+    --text-muted:#8A8F98;
+    --gold:#C7A15A;
+    --green:#3C8C6E;
+    --green-bg:rgba(60,140,110,0.14);
+    --amber:#C08A3E;
+    --amber-bg:rgba(192,138,62,0.14);
+    --slate:#7A8290;
+    --slate-bg:rgba(122,130,144,0.14);
+    --rust:#C0603E;
+    --rust-bg:rgba(192,96,62,0.16);
+    --serif: "Iowan Old Style","Palatino Linotype","Georgia",serif;
+    --sans: -apple-system, "SF Pro Text", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Menlo", monospace;
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:var(--sans); font-size:15px; line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+  }
+  #app{max-width:560px; margin:0 auto; min-height:100vh; display:flex; flex-direction:column;}
+  header.top{
+    padding:calc(14px + var(--safe-top)) 20px 12px;
+    border-bottom:1px solid var(--border);
+    display:flex; align-items:baseline; justify-content:space-between;
+  }
+  header.top h1{
+    font-family:var(--serif); font-weight:600; font-size:22px; margin:0; letter-spacing:0.2px;
+  }
+  header.top .updated{font-size:12px; color:var(--text-muted); font-family:var(--mono);}
+  header.top .updated.stale{color:var(--rust);}
+  main.screen{display:none; flex:1; padding:4px 20px 24px;}
+  main.screen.active{display:block;}
+  .banner{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; margin:14px 0; font-size:13px; color:var(--text-muted);
+  }
+  .banner.warn{border-color:var(--rust); color:var(--rust);}
+  .banner strong{color:var(--text);}
+  section{margin-top:26px;}
+  section:first-of-type{margin-top:18px;}
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-family:var(--serif); font-size:16px; font-weight:600; margin:0; color:var(--text);
+  }
+  .section-head .count{font-size:12px; color:var(--text-muted); font-family:var(--mono);}
+  .empty-row{padding:16px 0; color:var(--text-muted); font-size:13px; border-top:1px solid var(--border);}
+
+  /* Zeilen-Layout (Ledger-Stil statt Karten) */
+  .row{
+    display:flex; align-items:center; gap:12px;
+    padding:13px 0; border-top:1px solid var(--border);
+    cursor:pointer;
+  }
+  .row:active{background:var(--surface);}
+  .row .symbol-block{flex:1; min-width:0;}
+  .row .symbol{font-family:var(--mono); font-size:14px; font-weight:600; color:var(--text);}
+  .row .name{font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .row .numbers{text-align:right;}
+  .row .price{font-family:var(--mono); font-size:14px;}
+  .row .change{font-family:var(--mono); font-size:12px;}
+  .up{color:var(--green);} .down{color:var(--rust);} .flat{color:var(--text-muted);}
+  .badge{
+    display:inline-block; font-size:11px; font-family:var(--mono); padding:2px 7px;
+    border-radius:5px; letter-spacing:0.3px; flex-shrink:0;
+  }
+  .badge-A{background:var(--green-bg); color:var(--green);}
+  .badge-B{background:var(--amber-bg); color:var(--amber);}
+  .badge-C{background:var(--slate-bg); color:var(--slate);}
+  .badge-D{background:var(--rust-bg); color:var(--rust);}
+  .badge-note{background:var(--surface-raised); color:var(--text-muted); border:1px solid var(--border);}
+  .tag-row{display:flex; gap:6px; margin-top:3px; flex-wrap:wrap;}
+
+  .kpi-strip{display:flex; gap:0; border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:14px;}
+  .kpi{flex:1; padding:12px 10px; text-align:center; border-right:1px solid var(--border);}
+  .kpi:last-child{border-right:none;}
+  .kpi .label{font-size:11px; color:var(--text-muted); margin-bottom:4px;}
+  .kpi .value{font-family:var(--mono); font-size:16px; color:var(--text);}
+
+  /* Overlay fuer Detail/Entscheidung */
+  .overlay{
+    position:fixed; inset:0; background:var(--bg); z-index:50;
+    display:flex; flex-direction:column; max-width:560px; margin:0 auto;
+  }
+  .overlay.hidden{display:none;}
+  .overlay-head{
+    padding:calc(14px + var(--safe-top)) 20px 12px; border-bottom:1px solid var(--border);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .overlay-head .back{color:var(--gold); font-size:15px; background:none; border:none; padding:6px 0;}
+  .overlay-body{flex:1; overflow-y:auto; padding:6px 20px 24px;}
+  .overlay-title{font-family:var(--serif); font-size:20px; font-weight:600;}
+  .overlay-sub{font-size:12px; color:var(--text-muted); font-family:var(--mono); margin-top:2px;}
+
+  .fact-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:18px 0;}
+  .fact{border:1px solid var(--border); border-radius:8px; padding:9px 8px;}
+  .fact .l{font-size:10.5px; color:var(--text-muted);}
+  .fact .v{font-family:var(--mono); font-size:14px; margin-top:2px;}
+
+  .commentary{background:var(--surface); border-radius:10px; padding:14px; margin:16px 0;}
+  .commentary .c-label{font-size:11px; color:var(--text-muted); text-transform:none; margin-bottom:4px;}
+  .commentary .pro{color:var(--green); font-size:13.5px; margin-bottom:10px;}
+  .commentary .con{color:var(--rust); font-size:13.5px;}
+
+  .cta-row{display:flex; gap:10px; margin-top:20px;}
+  button.cta{
+    flex:1; padding:13px 10px; border-radius:9px; border:1px solid var(--border);
+    background:var(--surface-raised); color:var(--text); font-size:14px; font-family:var(--sans);
+  }
+  button.cta.primary{background:var(--gold); color:#14181C; border-color:var(--gold); font-weight:600;}
+  button.cta.danger{background:var(--rust); color:#14181C; border-color:var(--rust); font-weight:600;}
+  button.cta:active{opacity:0.75;}
+
+  label.field{display:block; margin-top:16px; font-size:12.5px; color:var(--text-muted);}
+  input, textarea, select{
+    width:100%; margin-top:6px; padding:11px 12px; background:var(--surface);
+    border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:15px;
+    font-family:var(--sans);
+  }
+  textarea{min-height:70px; resize:vertical;}
+  .hint{font-size:11.5px; color:var(--text-muted); margin-top:5px;}
+
+  nav#tabbar{
+    display:flex; border-top:1px solid var(--border); background:var(--bg);
+    padding-bottom:var(--safe-bottom);
+  }
+  nav#tabbar button{
+    flex:1; background:none; border:none; color:var(--text-muted); padding:11px 4px 9px;
+    font-size:11px; font-family:var(--sans);
+  }
+  nav#tabbar button.active{color:var(--gold);}
+  nav#tabbar button .dot{display:block; width:5px; height:5px; border-radius:50%; margin:0 auto 4px; background:transparent;}
+  nav#tabbar button.active .dot{background:var(--gold);}
+
+  h3.subhead{font-family:var(--serif); font-size:14.5px; font-weight:600; margin:22px 0 8px;}
+  .journal-entry{border-top:1px solid var(--border); padding:12px 0;}
+  .journal-entry .je-head{display:flex; justify-content:space-between; align-items:center;}
+  .journal-entry .je-reason{font-size:13px; color:var(--text-muted); margin-top:5px;}
+  .journal-entry .je-date{font-size:11px; color:var(--text-muted); font-family:var(--mono);}
+
+  .settings-group{border:1px solid var(--border); border-radius:10px; padding:4px 14px; margin-top:14px;}
+  .settings-row{display:flex; justify-content:space-between; align-items:center; padding:13px 0; border-top:1px solid var(--border);}
+  .settings-row:first-child{border-top:none;}
+  .settings-row .s-label{font-size:14px;}
+  .settings-row .s-sub{font-size:11.5px; color:var(--text-muted); margin-top:2px;}
+  .settings-row input{width:110px; margin-top:0; text-align:right;}
+  a.linklike, button.linklike{
+    color:var(--gold); background:none; border:none; font-size:14px; padding:13px 0;
+    display:block; width:100%; text-align:left; font-family:var(--sans); border-top:1px solid var(--border);
+  }
+  .danger-link{color:var(--rust) !important;}
+  #import-file{display:none;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header class="top">
+    <h1>Trend-Cockpit</h1>
+    <span class="updated" id="updated-label">lädt …</span>
+  </header>
+
+  <!-- ============ START ============ -->
+  <main class="screen active" id="screen-start">
+    <div id="stale-banner"></div>
+    <div id="market-banner"></div>
+
+    <section id="sell-section" style="display:none;">
+      <div class="section-head"><h2>Verkaufssignale</h2></div>
+      <div id="sell-list"></div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Mein Depot</h2><span class="count" id="depot-count"></span></div>
+      <div id="depot-list"></div>
+      <div class="kpi-strip" id="depot-kpis"></div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Kandidaten heute</h2><span class="count" id="cand-count"></span></div>
+      <div id="candidate-list"></div>
+    </section>
+  </main>
+
+  <!-- ============ JOURNAL ============ -->
+  <main class="screen" id="screen-journal">
+    <section>
+      <div class="section-head"><h2>Journal</h2><span class="count" id="journal-count"></span></div>
+      <div id="journal-list"></div>
+    </section>
+  </main>
+
+  <!-- ============ AUSWERTUNG ============ -->
+  <main class="screen" id="screen-auswertung">
+    <section>
+      <div class="section-head"><h2>Auswertung</h2></div>
+      <div id="auswertung-body"></div>
+    </section>
+  </main>
+
+  <!-- ============ EINSTELLUNGEN ============ -->
+  <main class="screen" id="screen-einstellungen">
+    <section>
+      <div class="section-head"><h2>Einstellungen</h2></div>
+      <div class="settings-group">
+        <div class="settings-row">
+          <div><div class="s-label">Monatsbudget</div><div class="s-sub">wird am 1. Handelstag des Monats gutgeschrieben</div></div>
+          <input type="number" id="set-budget" inputmode="decimal">
+        </div>
+        <div class="settings-row">
+          <div><div class="s-label">Stop-Faktor (× ATR)</div><div class="s-sub">Trailing-Stop unter Höchstkurs seit Kauf</div></div>
+          <input type="number" id="set-stop" step="0.1" inputmode="decimal">
+        </div>
+        <div class="settings-row">
+          <div><div class="s-label">Verfügbares Kapital</div><div class="s-sub">aktueller Cash-Stand der Strategie</div></div>
+          <input type="number" id="set-cash" inputmode="decimal">
+        </div>
+      </div>
+      <button class="linklike" id="btn-save-settings" style="border-top:none; text-align:center; margin-top:14px; border:1px solid var(--border); border-radius:8px;">Speichern</button>
+
+      <h3 class="subhead">Daten</h3>
+      <div class="settings-group" style="padding:0 14px;">
+        <button class="linklike" id="btn-export">Backup exportieren (.json)</button>
+        <button class="linklike" id="btn-import-trigger">Backup importieren</button>
+        <input type="file" id="import-file" accept="application/json">
+        <button class="linklike danger-link" id="btn-reset">Alle Daten zurücksetzen</button>
+      </div>
+      <div class="hint" style="margin-top:14px;">
+        Depot, Journal und Einstellungen liegen nur lokal auf diesem iPhone (localStorage).
+        Löschst du die App vom Homescreen oder leerst du Safari-Daten, sind sie weg — deshalb
+        regelmäßig ein Backup exportieren.
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ OVERLAY: DETAIL + ENTSCHEIDUNG ============ -->
+  <div class="overlay hidden" id="overlay">
+    <div class="overlay-head">
+      <button class="back" id="overlay-back">Zurück</button>
+      <span id="overlay-cluster-badge"></span>
+    </div>
+    <div class="overlay-body" id="overlay-body"></div>
+  </div>
+
+  <nav id="tabbar">
+    <button data-screen="start" class="active"><span class="dot"></span>Start</button>
+    <button data-screen="journal"><span class="dot"></span>Journal</button>
+    <button data-screen="auswertung"><span class="dot"></span>Auswertung</button>
+    <button data-screen="einstellungen"><span class="dot"></span>Einstellungen</button>
+  </nav>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------------------------------------------------------------------
+  // Storage
+  // ---------------------------------------------------------------------
+  const K_SETTINGS = "tc_settings";
+  const K_DEPOT = "tc_depot";
+  const K_JOURNAL = "tc_journal";
+
+  const DEFAULT_SETTINGS = {
+    monthlyBudget: 1000,
+    stopATRMultiple: 3,
+    availableCapital: 0,
+    budgetAppliedMonths: [],      // z.B. ["2026-09"]
+    maxPositions: 5,
+    sectorCap: 2
+  };
+
+  function load(key, fallback){
+    try{
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    }catch(e){ return fallback; }
+  }
+  function save(key, value){
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  let settings = Object.assign({}, DEFAULT_SETTINGS, load(K_SETTINGS, {}));
+  let depot = load(K_DEPOT, []);           // [{symbol, shares, buyPriceEUR, buyDate, highestCloseEUR}]
+  let journal = load(K_JOURNAL, []);       // [{id,date,symbol,action,shares,priceEUR,reasoning,cluster}]
+
+  function persistAll(){
+    save(K_SETTINGS, settings);
+    save(K_DEPOT, depot);
+    save(K_JOURNAL, journal);
+  }
+
+  // monatliche Gutschrift
+  function applyMonthlyBudget(){
+    const ym = new Date().toISOString().slice(0,7);
+    if(!settings.budgetAppliedMonths.includes(ym)){
+      settings.availableCapital = round2(settings.availableCapital + Number(settings.monthlyBudget||0));
+      settings.budgetAppliedMonths.push(ym);
+      save(K_SETTINGS, settings);
+    }
+  }
+
+  function round2(n){ return Math.round(n*100)/100; }
+  function fmtEUR(n){ return (n<0?"-":"") + "€" + Math.abs(n).toFixed(2).replace(".", ","); }
+  function fmtPct(n){ return (n>0?"+":"") + n.toFixed(1) + "%"; }
+  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+
+  // ---------------------------------------------------------------------
+  // Daten laden
+  // ---------------------------------------------------------------------
+  let signals = null;
+  let universeMap = {};
+
+  function fetchSignals(){
+    return fetch("./data/signals.json", {cache:"no-store"})
+      .then(r => { if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(data => {
+        signals = data;
+        universeMap = {};
+        (data.universe || []).forEach(r => universeMap[r.symbol] = r);
+        // Kandidaten sind ebenfalls Teil des Universums, falls dort nicht enthalten ergaenzen
+        (data.top_candidates || []).forEach(r => { if(!universeMap[r.symbol]) universeMap[r.symbol] = r; });
+      })
+      .catch(err => {
+        console.error("signals.json konnte nicht geladen werden:", err);
+        signals = null;
+      });
+  }
+
+  function renderUpdatedLabel(){
+    const el = document.getElementById("updated-label");
+    if(!signals){ el.textContent = "keine Daten"; el.classList.add("stale"); return; }
+    const gen = new Date(signals.generated_at);
+    const ageHours = (Date.now() - gen.getTime()) / 36e5;
+    const label = gen.toLocaleDateString("de-DE", {day:"2-digit", month:"2-digit"}) + " " +
+                  gen.toLocaleTimeString("de-DE", {hour:"2-digit", minute:"2-digit"});
+    el.textContent = (signals.demo ? "Demo · " : "") + label;
+    el.classList.toggle("stale", ageHours > 90); // > ~3.5 Tage alt (Wochenende einkalkuliert)
+  }
+
+  function renderStaleBanner(){
+    const el = document.getElementById("stale-banner");
+    el.innerHTML = "";
+    if(!signals){
+      el.innerHTML = '<div class="banner warn"><strong>Keine Daten geladen.</strong> Prüfe, ob docs/data/signals.json existiert und die GitHub Action erfolgreich lief.</div>';
+      return;
+    }
+    if(signals.demo){
+      el.innerHTML = '<div class="banner"><strong>Demo-Daten.</strong> Diese Werte sind Beispieldaten. Sobald die GitHub Action einmal gelaufen ist, ersetzt sie diese Datei durch echte Kurse.</div>';
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Ableitungen: Depot-Wert, Sell-Signale, Kandidaten
+  // ---------------------------------------------------------------------
+  function currentRow(symbol){ return universeMap[symbol] || null; }
+
+  function depotValueEUR(){
+    return depot.reduce((sum,p) => {
+      const row = currentRow(p.symbol);
+      const price = row ? row.price_eur : p.buyPriceEUR;
+      return sum + price * p.shares;
+    }, 0);
+  }
+
+  function targetPositionSizeEUR(){
+    const total = depotValueEUR() + Number(settings.availableCapital||0);
+    return Math.max(total / settings.maxPositions, 500);
+  }
+
+  // aktualisiert highestCloseEUR je Position (fuer Trailing-Stop) und liefert Verkaufssignale
+  function computeSellSignals(){
+    const signalsOut = [];
+    depot.forEach(p => {
+      const row = currentRow(p.symbol);
+      if(!row) return;
+      if(!p.highestCloseEUR || row.price_eur > p.highestCloseEUR){
+        p.highestCloseEUR = row.price_eur;
+      }
+      const atrEUR = signals.fx_eur_usd ? row.atr14 / signals.fx_eur_usd : row.atr14;
+      const stopPrice = p.highestCloseEUR - settings.stopATRMultiple * atrEUR;
+      const reasons = [];
+      if(row.cluster === "D") reasons.push("Cluster D (Trendbruch)");
+      if(row.price_eur <= stopPrice) reasons.push("Trailing-Stop erreicht (" + fmtEUR(stopPrice) + ")");
+      if(reasons.length){
+        signalsOut.push({position:p, row, reasons, stopPrice});
+      }
+    });
+    save(K_DEPOT, depot);
+    return signalsOut;
+  }
+
+  function heldSymbols(){ return new Set(depot.map(p=>p.symbol)); }
+
+  function sectorCounts(){
+    const counts = {};
+    depot.forEach(p => {
+      const row = currentRow(p.symbol);
+      const sector = row ? row.sector : "unbekannt";
+      counts[sector] = (counts[sector]||0) + 1;
+    });
+    return counts;
+  }
+
+  function candidateList(){
+    if(!signals) return [];
+    const held = heldSymbols();
+    const secCounts = sectorCounts();
+    const list = (signals.top_candidates||[]).map(c => {
+      const alreadyHeld = held.has(c.symbol);
+      const sectorFull = (secCounts[c.sector]||0) >= settings.sectorCap && !alreadyHeld;
+      const positionsFull = depot.length >= settings.maxPositions && !alreadyHeld;
+      const marketDefensive = signals.market_filter && !signals.market_filter.risk_on;
+      const targetSize = targetPositionSizeEUR();
+      const suggestedShares = Math.floor(Math.min(targetSize, settings.availableCapital) / c.price_eur);
+      return Object.assign({}, c, {
+        alreadyHeld, sectorFull, positionsFull, marketDefensive,
+        suggestedShares, targetSize,
+        actionable: !sectorFull && !positionsFull && !marketDefensive && suggestedShares >= 1
+      });
+    });
+    return list;
+  }
+
+  // ---------------------------------------------------------------------
+  // Rendering: Start
+  // ---------------------------------------------------------------------
+  function renderMarketBanner(){
+    const el = document.getElementById("market-banner");
+    el.innerHTML = "";
+    if(!signals || !signals.market_filter) return;
+    const mf = signals.market_filter;
+    if(!mf.risk_on){
+      el.innerHTML = '<div class="banner warn"><strong>Markt defensiv:</strong> S&amp;P 500 notiert unter seinem 200-Tage-Durchschnitt. Keine neuen Käufe, Budget sammelt sich als Cash.</div>';
+    }
+  }
+
+  function renderSellSection(sellSignals){
+    const section = document.getElementById("sell-section");
+    const list = document.getElementById("sell-list");
+    list.innerHTML = "";
+    if(!sellSignals.length){ section.style.display = "none"; return; }
+    section.style.display = "block";
+    sellSignals.forEach(s => {
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML = `
+        <span class="badge badge-D">VERKAUF</span>
+        <div class="symbol-block">
+          <div class="symbol">${s.position.symbol}</div>
+          <div class="name">${s.reasons.join(" · ")}</div>
+        </div>
+        <div class="numbers">
+          <div class="price">${fmtEUR(s.row.price_eur)}</div>
+        </div>`;
+      row.addEventListener("click", () => openDetail(s.position.symbol, "sell"));
+      list.appendChild(row);
+    });
+  }
+
+  function renderDepot(){
+    const list = document.getElementById("depot-list");
+    const countEl = document.getElementById("depot-count");
+    list.innerHTML = "";
+    countEl.textContent = depot.length + " / " + settings.maxPositions;
+    if(!depot.length){
+      list.innerHTML = '<div class="empty-row">Noch keine Positionen. Kandidaten weiter unten ansehen.</div>';
+    }
+    depot.forEach(p => {
+      const row = currentRow(p.symbol);
+      const price = row ? row.price_eur : p.buyPriceEUR;
+      const pct = ((price - p.buyPriceEUR) / p.buyPriceEUR) * 100;
+      const cluster = row ? row.cluster : "?";
+      const el = document.createElement("div");
+      el.className = "row";
+      el.innerHTML = `
+        <span class="badge badge-${cluster}">${cluster}</span>
+        <div class="symbol-block">
+          <div class="symbol">${p.symbol}</div>
+          <div class="name">${p.shares} Stk · seit ${p.buyDate}</div>
+        </div>
+        <div class="numbers">
+          <div class="price">${fmtEUR(price)}</div>
+          <div class="change ${pct>0.05?'up':pct<-0.05?'down':'flat'}">${fmtPct(pct)}</div>
+        </div>`;
+      el.addEventListener("click", () => openDetail(p.symbol, "manage"));
+      list.appendChild(el);
+    });
+  }
+
+  function renderDepotKPIs(){
+    const el = document.getElementById("depot-kpis");
+    const value = depotValueEUR();
+    const cash = Number(settings.availableCapital||0);
+    el.innerHTML = `
+      <div class="kpi"><div class="label">Depotwert</div><div class="value">${fmtEUR(value)}</div></div>
+      <div class="kpi"><div class="label">Cash</div><div class="value">${fmtEUR(cash)}</div></div>
+      <div class="kpi"><div class="label">Zielgröße/Position</div><div class="value">${fmtEUR(targetPositionSizeEUR())}</div></div>`;
+  }
+
+  function renderCandidates(){
+    const list = document.getElementById("candidate-list");
+    const countEl = document.getElementById("cand-count");
+    list.innerHTML = "";
+    if(!signals){
+      list.innerHTML = '<div class="empty-row">Keine Daten geladen.</div>';
+      countEl.textContent = "";
+      return;
+    }
+    const cands = candidateList().filter(c => !c.alreadyHeld);
+    countEl.textContent = cands.length;
+    if(!cands.length){
+      list.innerHTML = '<div class="empty-row">Keine neuen Kandidaten heute.</div>';
+    }
+    cands.forEach(c => {
+      const notes = [];
+      if(c.sectorFull) notes.push("Sektorlimit");
+      if(c.positionsFull) notes.push("Positionslimit");
+      if(c.marketDefensive) notes.push("Markt defensiv");
+      if(!c.actionable && !notes.length) notes.push("Budget knapp");
+      const el = document.createElement("div");
+      el.className = "row";
+      el.innerHTML = `
+        <span class="badge badge-${c.cluster}">${c.cluster}</span>
+        <div class="symbol-block">
+          <div class="symbol">${c.symbol} <span style="color:var(--text-muted); font-weight:400;">${c.name}</span></div>
+          <div class="tag-row">
+            ${c.earnings_soon ? '<span class="badge badge-note">Earnings bald</span>' : ""}
+            ${notes.map(n=>`<span class="badge badge-note">${n}</span>`).join("")}
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="price">${fmtEUR(c.price_eur)}</div>
+          <div class="change up">${fmtPct(c.rel_strength_pct)} rS</div>
+        </div>`;
+      el.addEventListener("click", () => openDetail(c.symbol, "buy"));
+      list.appendChild(el);
+    });
+  }
+
+  function renderStart(){
+    renderStaleBanner();
+    renderMarketBanner();
+    const sells = signals ? computeSellSignals() : [];
+    renderSellSection(sells);
+    renderDepot();
+    renderDepotKPIs();
+    renderCandidates();
+  }
+
+  // ---------------------------------------------------------------------
+  // Rendering: Journal
+  // ---------------------------------------------------------------------
+  const ACTION_LABEL = {kauf:"Kauf", verkauf:"Verkauf", uebersprungen:"Übersprungen"};
+  const ACTION_COLOR = {kauf:"badge-A", verkauf:"badge-D", uebersprungen:"badge-C"};
+
+  function renderJournal(){
+    const list = document.getElementById("journal-list");
+    const countEl = document.getElementById("journal-count");
+    list.innerHTML = "";
+    countEl.textContent = journal.length;
+    if(!journal.length){
+      list.innerHTML = '<div class="empty-row">Noch keine Entscheidungen protokolliert.</div>';
+      return;
+    }
+    [...journal].reverse().forEach(j => {
+      const el = document.createElement("div");
+      el.className = "journal-entry";
+      el.innerHTML = `
+        <div class="je-head">
+          <span><span class="badge ${ACTION_COLOR[j.action]}">${ACTION_LABEL[j.action]}</span> <b>${j.symbol}</b></span>
+          <span class="je-date">${j.date}</span>
+        </div>
+        <div class="je-reason">${escapeHtml(j.reasoning)}</div>`;
+      list.appendChild(el);
+    });
+  }
+
+  function escapeHtml(s){
+    const d = document.createElement("div");
+    d.textContent = s || "";
+    return d.innerHTML;
+  }
+
+  // ---------------------------------------------------------------------
+  // Rendering: Auswertung
+  // ---------------------------------------------------------------------
+  function renderAuswertung(){
+    const el = document.getElementById("auswertung-body");
+    const kauf = journal.filter(j => j.action === "kauf");
+    const skip = journal.filter(j => j.action === "uebersprungen");
+    const verkauf = journal.filter(j => j.action === "verkauf");
+
+    function avgReturn(entries, useCurrentPrice){
+      const vals = entries.map(e => {
+        if(useCurrentPrice){
+          const row = currentRow(e.symbol);
+          if(!row) return null;
+          return ((row.price_eur - e.priceEUR) / e.priceEUR) * 100;
+        }
+        return typeof e.realizedReturnPct === "number" ? e.realizedReturnPct : null;
+      }).filter(v => v !== null);
+      if(!vals.length) return null;
+      return vals.reduce((a,b)=>a+b,0) / vals.length;
+    }
+
+    const kaufAvg = avgReturn(kauf, true);
+    const skipAvg = avgReturn(skip, true);
+    const verkaufAvg = avgReturn(verkauf, false);
+    const marketMomentum = signals && signals.market_filter ? signals.market_filter.spy_momentum_6m_pct : null;
+
+    el.innerHTML = `
+      <div class="kpi-strip">
+        <div class="kpi"><div class="label">Ø gekauft (offen)</div><div class="value">${kaufAvg===null?"–":fmtPct(kaufAvg)}</div></div>
+        <div class="kpi"><div class="label">Ø übersprungen</div><div class="value">${skipAvg===null?"–":fmtPct(skipAvg)}</div></div>
+        <div class="kpi"><div class="label">Ø realisiert</div><div class="value">${verkaufAvg===null?"–":fmtPct(verkaufAvg)}</div></div>
+      </div>
+      <div class="hint" style="margin-top:12px;">
+        "Übersprungen" vergleicht den Kurs zum Zeitpunkt deiner Entscheidung mit dem aktuellen Kurs — so siehst
+        du, was ein übersprungener Kandidat seitdem gemacht hätte.
+      </div>
+      ${marketMomentum!==null ? `<div class="banner" style="margin-top:16px;">Zum Vergleich (informativ, kein exakt gleicher Zeitraum): S&amp;P 500 6-Monats-Momentum aktuell ${fmtPct(marketMomentum)}.</div>` : ""}
+      <h3 class="subhead">Anzahl Entscheidungen</h3>
+      <div class="kpi-strip">
+        <div class="kpi"><div class="label">Käufe</div><div class="value">${kauf.length}</div></div>
+        <div class="kpi"><div class="label">Übersprungen</div><div class="value">${skip.length}</div></div>
+        <div class="kpi"><div class="label">Verkäufe</div><div class="value">${verkauf.length}</div></div>
+      </div>
+    `;
+  }
+
+  // ---------------------------------------------------------------------
+  // Overlay: Detail + Entscheidung
+  // ---------------------------------------------------------------------
+  const overlay = document.getElementById("overlay");
+  const overlayBody = document.getElementById("overlay-body");
+  const overlayBadge = document.getElementById("overlay-cluster-badge");
+
+  function openDetail(symbol, mode){
+    const row = currentRow(symbol);
+    if(!row){ return; }
+    const held = depot.find(p => p.symbol === symbol) || null;
+    overlayBadge.innerHTML = `<span class="badge badge-${row.cluster}">Cluster ${row.cluster}</span>`;
+
+    const factGrid = `
+      <div class="fact-grid">
+        <div class="fact"><div class="l">Kurs</div><div class="v">${fmtEUR(row.price_eur)}</div></div>
+        <div class="fact"><div class="l">SMA50</div><div class="v">$${row.sma50}</div></div>
+        <div class="fact"><div class="l">SMA200</div><div class="v">$${row.sma200}</div></div>
+        <div class="fact"><div class="l">RSI14</div><div class="v">${row.rsi14}</div></div>
+        <div class="fact"><div class="l">Momentum 6M</div><div class="v">${fmtPct(row.momentum_pct)}</div></div>
+        <div class="fact"><div class="l">rel. Stärke</div><div class="v">${fmtPct(row.rel_strength_pct)}</div></div>
+      </div>
+      <div class="hint">${row.cluster_reason || ""}</div>
+    `;
+
+    const commentary = (row.commentary_pro || row.commentary_con) ? `
+      <div class="commentary">
+        <div class="c-label">Einordnung</div>
+        ${row.commentary_pro ? `<div class="pro">＋ ${escapeHtml(row.commentary_pro)}</div>` : ""}
+        ${row.commentary_con ? `<div class="con">－ ${escapeHtml(row.commentary_con)}</div>` : ""}
+      </div>` : "";
+
+    const earnings = row.earnings_soon ? `<div class="banner warn">Earnings-Termin in Kürze${row.earnings_date ? " ("+row.earnings_date+")" : ""}.</div>` : "";
+
+    let actions = "";
+    if(mode === "sell"){
+      actions = `<div class="cta-row"><button class="cta danger" id="act-sell">Verkaufen</button><button class="cta" id="act-skip-sell">Noch halten</button></div>`;
+    } else if(mode === "manage" && held){
+      const canAddMore = (row.cluster === "A" || row.cluster === "B");
+      actions = `<div class="cta-row">
+        <button class="cta danger" id="act-sell">Verkaufen</button>
+        ${canAddMore ? '<button class="cta primary" id="act-buy-more">Nachkaufen</button>' : ''}
+      </div>`;
+    } else {
+      actions = `<div class="cta-row"><button class="cta" id="act-skip">Überspringen</button><button class="cta primary" id="act-buy">Kaufen</button></div>`;
+    }
+
+    overlayBody.innerHTML = `
+      <div class="overlay-title">${symbol}</div>
+      <div class="overlay-sub">${row.name || ""} · ${row.sector || ""}</div>
+      ${earnings}
+      ${factGrid}
+      ${commentary}
+      ${held ? `<div class="hint">Du hältst ${held.shares} Stk, Kaufkurs ${fmtEUR(held.buyPriceEUR)}.</div>` : ""}
+      ${actions}
+      <div id="decision-form"></div>
+    `;
+
+    const targetSize = targetPositionSizeEUR();
+    const suggestedShares = Math.max(1, Math.floor(Math.min(targetSize, settings.availableCapital) / row.price_eur));
+
+    function bind(id, action, cb){
+      const btn = document.getElementById(id);
+      if(btn) btn.addEventListener("click", cb);
+    }
+
+    bind("act-buy", "buy", () => showDecisionForm(symbol, "kauf", row, suggestedShares));
+    bind("act-buy-more", "buy", () => showDecisionForm(symbol, "kauf", row, suggestedShares));
+    bind("act-skip", "skip", () => showDecisionForm(symbol, "uebersprungen", row, 0));
+    bind("act-skip-sell", "skip", () => closeOverlay());
+    bind("act-sell", "sell", () => showDecisionForm(symbol, "verkauf", row, held ? held.shares : 0));
+
+    overlay.classList.remove("hidden");
+  }
+
+  function showDecisionForm(symbol, action, row, defaultShares){
+    const form = document.getElementById("decision-form");
+    const needsSharesPrice = (action === "kauf" || action === "verkauf");
+    form.innerHTML = `
+      <h3 class="subhead">${ACTION_LABEL[action]} bestätigen</h3>
+      ${needsSharesPrice ? `
+        <label class="field">Stückzahl
+          <input type="number" id="f-shares" value="${defaultShares}" min="1">
+        </label>
+        <label class="field">Kurs pro Stück (€)
+          <input type="number" id="f-price" value="${row.price_eur}" step="0.01">
+        </label>` : ""}
+      <label class="field">Begründung (Pflicht)
+        <textarea id="f-reason" placeholder="Warum triffst du diese Entscheidung?"></textarea>
+      </label>
+      <div class="cta-row">
+        <button class="cta primary" id="f-submit" style="flex:1;">${ACTION_LABEL[action]} speichern</button>
+      </div>
+    `;
+    document.getElementById("f-submit").addEventListener("click", () => {
+      const reasoning = document.getElementById("f-reason").value.trim();
+      if(!reasoning){ alert("Bitte eine kurze Begründung eintragen."); return; }
+      let shares = 0, price = row.price_eur;
+      if(needsSharesPrice){
+        shares = Number(document.getElementById("f-shares").value);
+        price = Number(document.getElementById("f-price").value);
+        if(!shares || shares <= 0){ alert("Bitte eine gültige Stückzahl eintragen."); return; }
+      }
+      commitDecision(symbol, action, shares, price, reasoning, row.cluster);
+    });
+  }
+
+  function commitDecision(symbol, action, shares, price, reasoning, cluster){
+    const today = new Date().toISOString().slice(0,10);
+    const entry = {id:uid(), date:today, symbol, action, shares, priceEUR:price, reasoning, cluster};
+
+    if(action === "kauf"){
+      const existing = depot.find(p => p.symbol === symbol);
+      if(existing){
+        const totalCost = existing.buyPriceEUR*existing.shares + price*shares;
+        existing.shares += shares;
+        existing.buyPriceEUR = round2(totalCost / existing.shares);
+        existing.highestCloseEUR = Math.max(existing.highestCloseEUR||0, price);
+      } else {
+        depot.push({symbol, shares, buyPriceEUR:price, buyDate:today, highestCloseEUR:price});
+      }
+      settings.availableCapital = round2(settings.availableCapital - shares*price);
+    } else if(action === "verkauf"){
+      const idx = depot.findIndex(p => p.symbol === symbol);
+      if(idx >= 0){
+        const pos = depot[idx];
+        entry.realizedReturnPct = round2(((price - pos.buyPriceEUR) / pos.buyPriceEUR) * 100);
+        settings.availableCapital = round2(settings.availableCapital + shares*price);
+        depot.splice(idx,1);
+      }
+    }
+    journal.push(entry);
+    persistAll();
+    closeOverlay();
+    renderStart();
+    renderDepotKPIs();
+  }
+
+  function closeOverlay(){
+    overlay.classList.add("hidden");
+    overlayBody.innerHTML = "";
+    renderStart();
+  }
+  document.getElementById("overlay-back").addEventListener("click", closeOverlay);
+
+  // ---------------------------------------------------------------------
+  // Tabs
+  // ---------------------------------------------------------------------
+  function showScreen(name){
+    document.querySelectorAll("main.screen").forEach(s => s.classList.remove("active"));
+    document.getElementById("screen-" + name).classList.add("active");
+    document.querySelectorAll("#tabbar button").forEach(b => b.classList.toggle("active", b.dataset.screen === name));
+    if(name === "journal") renderJournal();
+    if(name === "auswertung") renderAuswertung();
+    if(name === "einstellungen") fillSettingsForm();
+  }
+  document.querySelectorAll("#tabbar button").forEach(b => {
+    b.addEventListener("click", () => showScreen(b.dataset.screen));
+  });
+
+  // ---------------------------------------------------------------------
+  // Einstellungen
+  // ---------------------------------------------------------------------
+  function fillSettingsForm(){
+    document.getElementById("set-budget").value = settings.monthlyBudget;
+    document.getElementById("set-stop").value = settings.stopATRMultiple;
+    document.getElementById("set-cash").value = settings.availableCapital;
+  }
+  document.getElementById("btn-save-settings").addEventListener("click", () => {
+    settings.monthlyBudget = Number(document.getElementById("set-budget").value) || 0;
+    settings.stopATRMultiple = Number(document.getElementById("set-stop").value) || 3;
+    settings.availableCapital = Number(document.getElementById("set-cash").value) || 0;
+    save(K_SETTINGS, settings);
+    renderDepotKPIs();
+    alert("Gespeichert.");
+  });
+
+  document.getElementById("btn-export").addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify({settings, depot, journal}, null, 2)], {type:"application/json"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "trend-cockpit-backup-" + new Date().toISOString().slice(0,10) + ".json";
+    a.click();
+  });
+
+  document.getElementById("btn-import-trigger").addEventListener("click", () => {
+    document.getElementById("import-file").click();
+  });
+  document.getElementById("import-file").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try{
+        const data = JSON.parse(reader.result);
+        if(!confirm("Backup importieren und aktuelle Daten überschreiben?")) return;
+        settings = Object.assign({}, DEFAULT_SETTINGS, data.settings||{});
+        depot = data.depot || [];
+        journal = data.journal || [];
+        persistAll();
+        renderStart(); fillSettingsForm();
+        alert("Backup importiert.");
+      }catch(err){ alert("Datei konnte nicht gelesen werden."); }
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById("btn-reset").addEventListener("click", () => {
+    if(!confirm("Wirklich ALLE Daten (Depot, Journal, Einstellungen) löschen? Das kann nicht rückgängig gemacht werden.")) return;
+    localStorage.removeItem(K_SETTINGS);
+    localStorage.removeItem(K_DEPOT);
+    localStorage.removeItem(K_JOURNAL);
+    settings = Object.assign({}, DEFAULT_SETTINGS);
+    depot = []; journal = [];
+    persistAll();
+    renderStart(); fillSettingsForm();
+  });
+
+  // ---------------------------------------------------------------------
+  // Start
+  // ---------------------------------------------------------------------
+  fetchSignals().then(() => {
+    applyMonthlyBudget();
+    renderUpdatedLabel();
+    renderStart();
+  });
+
+})();
+</script>
+</body>
+</html>
