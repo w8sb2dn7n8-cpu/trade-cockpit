@@ -198,6 +198,22 @@
   .mini-wrap svg{display:block; width:100%; height:auto; border:1px solid var(--border); border-radius:10px; background:var(--surface);}
   .mini-legend{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px; font-size:10.5px; color:var(--text-muted); font-family:var(--mono);}
   .mini-legend i{display:inline-block; width:12px; height:0; border-top:2px solid; margin-right:4px; vertical-align:2px;}
+
+  /* Vermoegensuebersicht */
+  .total-card{border:1px solid var(--border); border-radius:12px; padding:16px; margin-top:14px; background:var(--surface);}
+  .total-card .tc-label{font-size:11.5px; color:var(--text-muted);}
+  .total-card .tc-value{font-family:var(--mono); font-size:28px; margin-top:2px;}
+  .total-card .tc-sub{font-size:12px; color:var(--text-muted); margin-top:4px; font-family:var(--mono);}
+  .alloc{display:flex; height:8px; border-radius:4px; overflow:hidden; margin:14px 0 8px; background:var(--surface-raised);}
+  .alloc span{display:block; height:100%;}
+  .alloc-legend{display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--text-muted); font-family:var(--mono);}
+  .alloc-legend i{display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:5px;}
+  .pnl-row{display:flex; align-items:center; gap:10px; padding:12px 0; border-top:1px solid var(--border);}
+  .pnl-row .pl-sym{flex:1; min-width:0;}
+  .pnl-row .pl-sym .s{font-family:var(--mono); font-size:13.5px;}
+  .pnl-row .pl-sym .q{font-size:11px; color:var(--text-muted); font-family:var(--mono);}
+  .pnl-row .pl-num{text-align:right; font-family:var(--mono); font-size:13.5px;}
+  .pnl-row .pl-num .p{font-size:11px;}
 </style>
 </head>
 <body>
@@ -222,11 +238,21 @@
       <div class="section-head"><h2>Mein Depot</h2><span class="count" id="depot-count"></span></div>
       <div id="depot-list"></div>
       <div class="kpi-strip" id="depot-kpis"></div>
+      <button class="linklike" id="add-position-btn">+ Position manuell hinzufügen (z. B. Krypto)</button>
+      <div id="add-position-form"></div>
     </section>
 
     <section>
       <div class="section-head"><h2>Kandidaten heute</h2><span class="count" id="cand-count"></span></div>
       <div id="candidate-list"></div>
+    </section>
+  </main>
+
+  <!-- ============ VERMOEGEN ============ -->
+  <main class="screen" id="screen-vermoegen">
+    <section>
+      <div class="section-head"><h2>Vermögen</h2><span class="count" id="verm-fx"></span></div>
+      <div id="vermoegen-body"></div>
     </section>
   </main>
 
@@ -292,6 +318,7 @@
 
   <nav id="tabbar">
     <button data-screen="start" class="active"><span class="dot"></span>Start</button>
+    <button data-screen="vermoegen"><span class="dot"></span>Vermögen</button>
     <button data-screen="journal"><span class="dot"></span>Journal</button>
     <button data-screen="auswertung"><span class="dot"></span>Auswertung</button>
     <button data-screen="einstellungen"><span class="dot"></span>Einstellungen</button>
@@ -352,6 +379,15 @@
   function round2(n){ return Math.round(n*100)/100; }
   function fmtEUR(n){ return (n<0?"-":"") + "€" + Math.abs(n).toFixed(2).replace(".", ","); }
   function fmtPct(n){ return (n>0?"+":"") + n.toFixed(1) + "%"; }
+  // Krypto braucht Bruchteile, Aktien nicht
+  function fmtQty(n, crypto){
+    if(crypto) return (Math.round(n*1e6)/1e6).toString().replace(".", ",");
+    return n + " Stk";
+  }
+  function isCryptoSymbol(symbol){
+    const row = currentRow(symbol);
+    return !!(row && row.asset_class === "krypto");
+  }
   function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 
   // ---------------------------------------------------------------------
@@ -523,6 +559,196 @@
   }
 
   // ---------------------------------------------------------------------
+  // Vermoegensuebersicht: Aktien + Krypto + Cash, alles in Euro
+  // ---------------------------------------------------------------------
+  function portfolioTotals(){
+    let stockValue = 0, cryptoValue = 0, costTotal = 0, openPnL = 0;
+    const positions = [];
+    depot.forEach(p => {
+      const row = currentRow(p.symbol);
+      const price = row ? row.price_eur : p.buyPriceEUR;   // ohne Kursdaten: Einstand, damit nichts doppelt zaehlt
+      const crypto = !!(row && row.asset_class === "krypto");
+      const value = price * p.shares;
+      const cost = p.buyPriceEUR * p.shares;
+      if(crypto) cryptoValue += value; else stockValue += value;
+      costTotal += cost;
+      openPnL += value - cost;
+      positions.push({
+        symbol:p.symbol, name: row ? (row.name || "") : "", shares:p.shares,
+        price, value, cost, crypto, stale: !row,
+        pnl: value - cost, pnlPct: cost > 0 ? ((value/cost) - 1) * 100 : 0
+      });
+    });
+
+    // realisiert aus dem Journal (auch aus Altdatensaetzen ohne Euro-Feld ableitbar)
+    let realized = 0;
+    const realizedRows = [];
+    journal.filter(j => j.action === "verkauf").forEach(j => {
+      let pnl = null;
+      if(typeof j.realizedPnLEUR === "number"){
+        pnl = j.realizedPnLEUR;
+      } else if(typeof j.realizedReturnPct === "number" && j.shares){
+        const buy = j.priceEUR / (1 + j.realizedReturnPct/100);
+        pnl = (j.priceEUR - buy) * j.shares;
+      }
+      if(pnl !== null){
+        realized += pnl;
+        realizedRows.push({symbol:j.symbol, date:j.date, pnl, pct:j.realizedReturnPct});
+      }
+    });
+
+    const cash = Number(settings.availableCapital||0);
+    positions.sort((a,b) => b.pnl - a.pnl);
+    return {
+      stockValue, cryptoValue, cash,
+      total: stockValue + cryptoValue + cash,
+      costTotal, openPnL,
+      openPnLPct: costTotal > 0 ? (openPnL / costTotal) * 100 : 0,
+      realized, total_result: openPnL + realized,
+      positions, realizedRows
+    };
+  }
+
+  function renderVermoegen(){
+    const el = document.getElementById("vermoegen-body");
+    const fxEl = document.getElementById("verm-fx");
+    const t = portfolioTotals();
+    fxEl.textContent = signals && signals.fx_eur_usd ? "1 € = " + signals.fx_eur_usd.toFixed(4) + " $" : "";
+
+    const cls = v => v > 0.005 ? "up" : (v < -0.005 ? "down" : "flat");
+    const invested = t.stockValue + t.cryptoValue;
+    const pct = v => t.total > 0 ? (v / t.total) * 100 : 0;
+
+    const alloc = `
+      <div class="alloc">
+        <span style="width:${pct(t.stockValue).toFixed(1)}%; background:var(--gold);"></span>
+        <span style="width:${pct(t.cryptoValue).toFixed(1)}%; background:var(--green);"></span>
+        <span style="width:${pct(t.cash).toFixed(1)}%; background:var(--slate);"></span>
+      </div>
+      <div class="alloc-legend">
+        <span><i style="background:var(--gold)"></i>Aktien ${fmtEUR(t.stockValue)}</span>
+        <span><i style="background:var(--green)"></i>Krypto ${fmtEUR(t.cryptoValue)}</span>
+        <span><i style="background:var(--slate)"></i>Cash ${fmtEUR(t.cash)}</span>
+      </div>`;
+
+    const posRows = t.positions.length ? t.positions.map(p => `
+      <div class="pnl-row">
+        <span class="badge ${p.crypto ? "badge-note" : "badge-A"}">${p.crypto ? "Krypto" : "Aktie"}</span>
+        <div class="pl-sym">
+          <div class="s">${p.symbol}</div>
+          <div class="q">${fmtQty(p.shares, p.crypto)} · Einstand ${fmtEUR(p.cost)}${p.stale ? " · keine Kursdaten" : ""}</div>
+        </div>
+        <div class="pl-num">
+          <div class="${cls(p.pnl)}">${p.pnl>0?"+":""}${fmtEUR(p.pnl)}</div>
+          <div class="p ${cls(p.pnl)}">${fmtPct(p.pnlPct)}</div>
+        </div>
+      </div>`).join("") : '<div class="empty-row">Noch keine Positionen im Depot.</div>';
+
+    const realRows = t.realizedRows.length ? t.realizedRows.slice(-6).reverse().map(r => `
+      <div class="pnl-row">
+        <div class="pl-sym">
+          <div class="s">${r.symbol}</div>
+          <div class="q">verkauft ${r.date}</div>
+        </div>
+        <div class="pl-num">
+          <div class="${cls(r.pnl)}">${r.pnl>0?"+":""}${fmtEUR(r.pnl)}</div>
+          <div class="p ${cls(r.pnl)}">${typeof r.pct === "number" ? fmtPct(r.pct) : ""}</div>
+        </div>
+      </div>`).join("") : '<div class="empty-row">Noch keine Verkäufe gebucht.</div>';
+
+    el.innerHTML = `
+      <div class="total-card">
+        <div class="tc-label">Gesamtvermögen</div>
+        <div class="tc-value">${fmtEUR(t.total)}</div>
+        <div class="tc-sub">davon investiert ${fmtEUR(invested)}</div>
+        ${alloc}
+      </div>
+
+      <h3 class="subhead">Gewinn / Verlust</h3>
+      <div class="kpi-strip">
+        <div class="kpi"><div class="label">Offen</div><div class="value ${cls(t.openPnL)}">${t.openPnL>0?"+":""}${fmtEUR(t.openPnL)}</div></div>
+        <div class="kpi"><div class="label">Realisiert</div><div class="value ${cls(t.realized)}">${t.realized>0?"+":""}${fmtEUR(t.realized)}</div></div>
+        <div class="kpi"><div class="label">Gesamt</div><div class="value ${cls(t.total_result)}">${t.total_result>0?"+":""}${fmtEUR(t.total_result)}</div></div>
+      </div>
+      <div class="hint">Offen = aktueller Wert minus Einstand aller Depotpositionen (${fmtPct(t.openPnLPct)} auf ${fmtEUR(t.costTotal)} Einstand). Realisiert = Summe aller gebuchten Verkäufe. Steuern und Ordergebühren sind nicht enthalten.</div>
+
+      <h3 class="subhead">Offene Positionen</h3>
+      ${posRows}
+
+      <h3 class="subhead">Realisierte Verkäufe</h3>
+      ${realRows}
+
+      <div class="banner" style="margin-top:18px;">Alle Beträge in Euro. US-Kurse und Krypto werden zum Tageskurs ${signals && signals.fx_eur_usd ? "1 € = " + signals.fx_eur_usd.toFixed(4) + " $" : "(unbekannt)"} umgerechnet. Krypto-Kurse kommen wie die Aktienkurse aus dem täglichen Lauf, nicht in Echtzeit.</div>
+    `;
+  }
+
+  // ---------------------------------------------------------------------
+  // Position manuell hinzufuegen (Krypto oder Bestandswerte)
+  // ---------------------------------------------------------------------
+  function renderAddPositionForm(){
+    const form = document.getElementById("add-position-form");
+    if(form.dataset.open === "1"){ form.innerHTML = ""; form.dataset.open = "0"; return; }
+    form.dataset.open = "1";
+    if(!signals){
+      form.innerHTML = '<div class="hint">Ohne geladene Kursdaten nicht möglich.</div>';
+      return;
+    }
+    const all = Object.values(universeMap);
+    const cryptos = all.filter(r => r.asset_class === "krypto");
+    const stocks = all.filter(r => r.asset_class !== "krypto").sort((a,b) => a.symbol.localeCompare(b.symbol));
+    const opt = r => `<option value="${r.symbol}">${r.symbol} — ${r.name || ""}</option>`;
+    const today = new Date().toISOString().slice(0,10);
+    form.innerHTML = `
+      <label class="field">Wert
+        <select id="ap-symbol">
+          <optgroup label="Krypto">${cryptos.map(opt).join("")}</optgroup>
+          <optgroup label="Aktien">${stocks.map(opt).join("")}</optgroup>
+        </select>
+      </label>
+      <label class="field">Menge
+        <input type="number" id="ap-qty" step="any" min="0" inputmode="decimal" placeholder="z. B. 0,25">
+      </label>
+      <label class="field">Einstandskurs pro Einheit (€)
+        <input type="number" id="ap-price" step="any" min="0" inputmode="decimal">
+      </label>
+      <label class="field">Kaufdatum
+        <input type="date" id="ap-date" value="${today}">
+      </label>
+      <div class="cta-row">
+        <button class="cta primary" id="ap-save">Position speichern</button>
+      </div>
+      <div class="hint">Bestehende Bestände werden nicht vom Cash abgezogen. Der Trailing-Stop nutzt als Hoch den höheren Wert aus Einstand und heutigem Kurs und wandert von dort mit.</div>
+    `;
+    document.getElementById("ap-save").addEventListener("click", () => {
+      const symbol = document.getElementById("ap-symbol").value;
+      const qty = Number(document.getElementById("ap-qty").value);
+      const price = Number(document.getElementById("ap-price").value);
+      const date = document.getElementById("ap-date").value || today;
+      if(!qty || qty <= 0){ alert("Bitte eine Menge größer als 0 eintragen."); return; }
+      if(!price || price <= 0){ alert("Bitte einen Einstandskurs größer als 0 eintragen."); return; }
+      const row = currentRow(symbol);
+      const existing = depot.find(p => p.symbol === symbol);
+      if(existing){
+        const totalCost = existing.buyPriceEUR*existing.shares + price*qty;
+        existing.shares = Math.round((existing.shares + qty) * 1e8) / 1e8;
+        existing.buyPriceEUR = round2(totalCost / existing.shares);
+      } else {
+        depot.push({
+          symbol, shares:qty, buyPriceEUR:round2(price), buyDate:date,
+          highestCloseEUR: Math.max(price, row ? row.price_eur : price)
+        });
+      }
+      journal.push({id:uid(), date, symbol, action:"kauf", shares:qty, priceEUR:round2(price),
+        reasoning:"Bestandsposition manuell erfasst", cluster: row ? row.cluster : "?"});
+      persistAll();
+      document.getElementById("add-position-form").innerHTML = "";
+      document.getElementById("add-position-form").dataset.open = "0";
+      renderStart();
+      renderDepotKPIs();
+    });
+  }
+
+  // ---------------------------------------------------------------------
   // Rendering: Start
   // ---------------------------------------------------------------------
   function renderMarketBanner(){
@@ -589,7 +815,7 @@
         <span class="badge badge-${cluster}">${cluster}</span>
         <div class="symbol-block">
           <div class="symbol">${p.symbol}</div>
-          <div class="name">${p.shares} Stk · seit ${p.buyDate}</div>
+          <div class="name">${fmtQty(p.shares, isCryptoSymbol(p.symbol))} · seit ${p.buyDate}</div>
           ${stopLine}
         </div>
         <div class="numbers">
@@ -844,13 +1070,14 @@
     const factGrid = `
       <div class="fact-grid">
         <div class="fact"><div class="l">Kurs</div><div class="v">${fmtEUR(row.price_eur)}</div></div>
-        <div class="fact"><div class="l">SMA50</div><div class="v">$${row.sma50}</div></div>
-        <div class="fact"><div class="l">SMA200</div><div class="v">$${row.sma200}</div></div>
+        <div class="fact"><div class="l">SMA50</div><div class="v">${fmtEUR(toEUR(row.sma50))}</div></div>
+        <div class="fact"><div class="l">SMA200</div><div class="v">${fmtEUR(toEUR(row.sma200))}</div></div>
         <div class="fact"><div class="l">RSI14</div><div class="v">${row.rsi14}</div></div>
         <div class="fact"><div class="l">Momentum 6M</div><div class="v">${fmtPct(row.momentum_pct)}</div></div>
         <div class="fact"><div class="l">rel. Stärke</div><div class="v">${fmtPct(row.rel_strength_pct)}</div></div>
       </div>
       <div class="hint">${row.cluster_reason || ""}</div>
+      <div class="hint">Alle Beträge in Euro, umgerechnet zum Kurs 1 € = ${signals && signals.fx_eur_usd ? signals.fx_eur_usd.toFixed(4) : "?"} $.</div>
     `;
 
     const commentary = (row.commentary_pro || row.commentary_con) ? `
@@ -936,8 +1163,8 @@
     form.innerHTML = `
       <h3 class="subhead">${ACTION_LABEL[action]} bestätigen</h3>
       ${needsSharesPrice ? `
-        <label class="field">Stückzahl
-          <input type="number" id="f-shares" value="${defaultShares}" min="1">
+        <label class="field">${isCryptoSymbol(symbol) ? "Menge (Bruchteile möglich)" : "Stückzahl"}
+          <input type="number" id="f-shares" value="${defaultShares}" min="0" step="${isCryptoSymbol(symbol) ? "any" : "1"}" inputmode="decimal">
         </label>
         <label class="field">Kurs pro Stück (€)
           <input type="number" id="f-price" value="${row.price_eur}" step="0.01">
@@ -982,6 +1209,8 @@
       if(idx >= 0){
         const pos = depot[idx];
         entry.realizedReturnPct = round2(((price - pos.buyPriceEUR) / pos.buyPriceEUR) * 100);
+        entry.realizedPnLEUR = round2((price - pos.buyPriceEUR) * shares);
+        entry.buyPriceEUR = pos.buyPriceEUR;
         settings.availableCapital = round2(settings.availableCapital + shares*price);
         depot.splice(idx,1);
       }
@@ -1003,10 +1232,14 @@
   // ---------------------------------------------------------------------
   // Tabs
   // ---------------------------------------------------------------------
+  const addBtn = document.getElementById("add-position-btn");
+  if(addBtn) addBtn.addEventListener("click", renderAddPositionForm);
+
   function showScreen(name){
     document.querySelectorAll("main.screen").forEach(s => s.classList.remove("active"));
     document.getElementById("screen-" + name).classList.add("active");
     document.querySelectorAll("#tabbar button").forEach(b => b.classList.toggle("active", b.dataset.screen === name));
+    if(name === "vermoegen") renderVermoegen();
     if(name === "journal") renderJournal();
     if(name === "auswertung") renderAuswertung();
     if(name === "einstellungen") fillSettingsForm();
