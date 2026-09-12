@@ -49,6 +49,16 @@ HISTORY_DAYS = 120             # Handelstage im Mini-Chart der App
 
 WIKI_SP500_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 
+# Krypto laeuft ueber dieselbe Rechenlogik wie Aktien (SMA200, ATR, Momentum),
+# wird aber NICHT als Kaufkandidat vorgeschlagen - nur fuer Depot-Abgleich,
+# Verkaufssignale und die Vermoegensuebersicht in der App.
+CRYPTO_SYMBOLS = {
+    "BTC-USD": "Bitcoin",
+    "ETH-USD": "Ethereum",
+    "SOL-USD": "Solana",
+    "XRP-USD": "XRP",
+}
+
 
 def log(msg):
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}", flush=True)
@@ -81,8 +91,8 @@ def load_universe():
 # ---------------------------------------------------------------------------
 
 def load_prices(tickers):
-    log(f"Lade Kursdaten fuer {len(tickers)} Ticker + SPY + EURUSD=X ...")
-    all_symbols = tickers + ["SPY", "EURUSD=X"]
+    log(f"Lade Kursdaten fuer {len(tickers)} Ticker + {len(CRYPTO_SYMBOLS)} Krypto + SPY + EURUSD=X ...")
+    all_symbols = tickers + list(CRYPTO_SYMBOLS.keys()) + ["SPY", "EURUSD=X"]
     data = yf.download(
         all_symbols,
         period=LOOKBACK_DAYS,
@@ -308,6 +318,7 @@ def main():
             if r:
                 r["name"] = name_lookup.get(sym, sym)
                 r["sector"] = sector_lookup.get(sym, "unbekannt")
+                r["asset_class"] = "aktie"
                 r["price_eur"] = round(r["price_usd"] / fx_eur_usd, 2)
                 rows.append(r)
         except Exception as e:
@@ -324,6 +335,27 @@ def main():
     ab_rows = [r for r in rows if r["cluster"] in ("A", "B")]
     ab_rows.sort(key=lambda r: (0 if r["cluster"] == "A" else 1, -r["rel_strength_pct"]))
     top_candidates = [dict(r) for r in ab_rows[:TOP_N_CANDIDATES]]
+
+    # --- Krypto (nach der Kandidatenauswahl, damit es nicht als Kaufvorschlag auftaucht) ---
+    log("Berechne Krypto-Werte ...")
+    crypto_rows = []
+    for sym, cname in CRYPTO_SYMBOLS.items():
+        try:
+            df_t = prices[sym] if sym in prices.columns.get_level_values(0) else None
+            r = analyze_ticker(sym, df_t, spy_momentum)
+            if r:
+                r["name"] = cname
+                r["sector"] = "Krypto"
+                r["asset_class"] = "krypto"
+                r["price_eur"] = round(r["price_usd"] / fx_eur_usd, 2)
+                crypto_rows.append(r)
+            else:
+                log(f"Krypto {sym}: zu wenig Kursdaten, uebersprungen.")
+        except Exception as e:
+            log(f"Fehler bei Krypto {sym}: {e}")
+    crypto_rows = assign_clusters(crypto_rows, momentum_threshold_top20)
+    rows.extend(crypto_rows)
+    log(f"{len(crypto_rows)} von {len(CRYPTO_SYMBOLS)} Krypto-Werten berechnet.")
 
     log(f"Pruefe Earnings-Termine fuer {len(top_candidates)} Kandidaten ...")
     for c in top_candidates:
@@ -357,6 +389,7 @@ def main():
         },
         "fx_eur_usd": round(fx_eur_usd, 4),
         "universe_count": len(rows),
+        "crypto_count": len(crypto_rows),
         "top_candidates": top_candidates,
         "universe": rows,
     }
