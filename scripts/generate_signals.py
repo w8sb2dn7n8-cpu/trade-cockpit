@@ -249,14 +249,14 @@ def get_claude_commentary(candidates, name_lookup):
     for c in candidates:
         name = name_lookup.get(c["symbol"], c["symbol"])
         prompt = (
-            f"Aktie: {name} ({c['symbol']}), Sektor: {c.get('sector', 'unbekannt')}.\n"
+            f"Wert: {name} ({c['symbol']}), Kategorie: {c.get('sector', 'unbekannt')}.\n"
             f"Cluster: {c['cluster']} ({c['cluster_reason']}).\n"
             f"Kurs: {c['price_usd']} USD, SMA50: {c['sma50']}, SMA200: {c['sma200']}, "
             f"RSI14: {c['rsi14']}, 6-Monats-Momentum: {c['momentum_pct']}%, "
             f"relative Staerke vs. S&P 500: {c['rel_strength_pct']} Punkte.\n\n"
             "Antworte NUR als JSON-Objekt ohne Markdown-Codeblock, im Format: "
             '{"pro": "...", "con": "..."}. '
-            "pro = 1-2 Saetze, warum die technische Einordnung fuer diese Aktie spricht. "
+            "pro = 1-2 Saetze, warum die technische Einordnung fuer diesen Wert spricht. "
             "con = 1-2 Saetze mit dem wichtigsten Gegenargument oder Risiko (z.B. Bewertung, "
             "Branchenlage, anstehende Ereignisse). Keine Kaufempfehlung aussprechen, "
             "nur die technische Lage einordnen. Deutsch, sachlich, keine Floskeln."
@@ -353,7 +353,11 @@ def main():
                 log(f"Krypto {sym}: zu wenig Kursdaten, uebersprungen.")
         except Exception as e:
             log(f"Fehler bei Krypto {sym}: {e}")
+    # Cluster mit derselben Momentum-Huerde wie Aktien: "A" heisst also
+    # staerker als 80% der S&P-500-Aktien - eine ehrliche, vergleichbare Latte.
     crypto_rows = assign_clusters(crypto_rows, momentum_threshold_top20)
+    crypto_candidates = [dict(r) for r in crypto_rows]
+    crypto_candidates.sort(key=lambda r: ({"A":0, "B":1, "C":2, "D":3}[r["cluster"]], -r["rel_strength_pct"]))
     rows.extend(crypto_rows)
     log(f"{len(crypto_rows)} von {len(CRYPTO_SYMBOLS)} Krypto-Werten berechnet.")
 
@@ -365,6 +369,8 @@ def main():
 
     log("Hole Claude-Kurzeinordnung fuer Kandidaten ...")
     top_candidates = get_claude_commentary(top_candidates, name_lookup)
+    crypto_names = {r["symbol"]: r["name"] for r in crypto_candidates}
+    crypto_candidates = get_claude_commentary(crypto_candidates, crypto_names)
 
     # Kurshistorie in eigene Datei auslagern (bevor die Hilfsfelder entfernt werden)
     history_out = {r["symbol"]: r["_history"] for r in rows if r.get("_history")}
@@ -374,7 +380,7 @@ def main():
         r.pop("_below_sma200_2days", None)
         r.pop("_sma50_below_sma200", None)
         r.pop("_history", None)
-    for c in top_candidates:
+    for c in top_candidates + crypto_candidates:
         c.pop("_below_sma200_2days", None)
         c.pop("_sma50_below_sma200", None)
         c.pop("_history", None)
@@ -391,6 +397,7 @@ def main():
         "universe_count": len(rows),
         "crypto_count": len(crypto_rows),
         "top_candidates": top_candidates,
+        "crypto_candidates": crypto_candidates,
         "universe": rows,
     }
 
