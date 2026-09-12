@@ -358,6 +358,8 @@
   // Daten laden
   // ---------------------------------------------------------------------
   let signals = null;
+  let priceHistory = null;      // {symbol: [Schlusskurse USD]} aus data/history.json
+  let historyTried = false;     // nur einmal pro Sitzung laden
   let universeMap = {};
 
   function fetchSignals(){
@@ -374,6 +376,22 @@
         console.error("signals.json konnte nicht geladen werden:", err);
         signals = null;
       });
+  }
+
+  // Kurshistorie liegt in einer eigenen Datei und wird erst geladen,
+  // wenn du eine Depotposition oeffnest - so bleibt der Start schnell.
+  function fetchHistory(){
+    if(historyTried) return Promise.resolve(priceHistory);
+    historyTried = true;
+    return fetch("./data/history.json", {cache:"no-store"})
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { priceHistory = d && d.close_usd ? d.close_usd : null; return priceHistory; })
+      .catch(err => { console.error("history.json konnte nicht geladen werden:", err); return null; });
+  }
+
+  function historyFor(symbol){
+    if(priceHistory && Array.isArray(priceHistory[symbol])) return priceHistory[symbol];
+    return null;
   }
 
   function renderUpdatedLabel(){
@@ -781,10 +799,13 @@
   // Nutzt row.history (Schlusskurse in USD, aeltester zuerst), sobald
   // generate_signals.py diese in signals.json mitliefert.
   function renderMiniChart(st){
-    const hist = st.row.history;
+    const hist = historyFor(st.position.symbol) || st.row.history;
     if(!Array.isArray(hist) || hist.length < 10){
+      const msg = historyTried && priceHistory === null
+        ? "Kursverlauf nicht verfügbar. Prüfe, ob docs/data/history.json existiert und der letzte GitHub-Action-Lauf erfolgreich war."
+        : "Kursverlauf wird geladen …";
       return `<div class="mini-wrap"><div class="mc-label">Kursverlauf</div>
-        <div class="hint">Noch keine Historie in signals.json. Sobald generate_signals.py die letzten Schlusskurse je Depotwert mitschreibt, erscheint hier der Verlauf mit Stop-Marke.</div></div>`;
+        <div class="hint">${msg}</div></div>`;
     }
     const data = hist.slice(-120).map(v => toEUR(v));
     const W = 320, H = 96, PAD = 6;
@@ -850,7 +871,7 @@
         sellStatus = `
           <h3 class="subhead">Verkaufs-Status</h3>
           ${renderStopPanel(st)}
-          ${renderMiniChart(st)}
+          <div id="mini-holder">${renderMiniChart(st)}</div>
           ${renderRuleBox(st)}`;
       }
     }
@@ -893,6 +914,18 @@
     bind("act-skip", "skip", () => showDecisionForm(symbol, "uebersprungen", row, 0));
     bind("act-skip-sell", "skip", () => closeOverlay());
     bind("act-sell", "sell", () => showDecisionForm(symbol, "verkauf", row, held ? held.shares : 0));
+
+    // Historie nachladen und nur den Chart-Block neu zeichnen
+    if(held && !historyFor(symbol)){
+      fetchHistory().then(() => {
+        const holder = document.getElementById("mini-holder");
+        if(!holder) return;
+        const st2 = positionStatus(held);
+        if(!st2) return;
+        st2.buyPrice = held.buyPriceEUR;
+        holder.innerHTML = renderMiniChart(st2);
+      });
+    }
 
     overlay.classList.remove("hidden");
   }
