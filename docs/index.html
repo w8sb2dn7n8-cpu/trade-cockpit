@@ -246,6 +246,11 @@
       <div class="section-head"><h2>Kandidaten heute</h2><span class="count" id="cand-count"></span></div>
       <div id="candidate-list"></div>
     </section>
+
+    <section>
+      <div class="section-head"><h2>Krypto</h2><span class="count" id="crypto-count"></span></div>
+      <div id="crypto-list"></div>
+    </section>
   </main>
 
   <!-- ============ VERMOEGEN ============ -->
@@ -384,6 +389,14 @@
     if(crypto) return (Math.round(n*1e6)/1e6).toString().replace(".", ",");
     return n + " Stk";
   }
+  // Einstandskurs entweder direkt oder aus dem Gesamt-Einstandswert ableiten
+  function resolveAvgPrice(qty, priceValue, totalValue){
+    const total = Number(totalValue);
+    if(total > 0 && qty > 0) return total / qty;
+    const price = Number(priceValue);
+    return price > 0 ? price : 0;
+  }
+
   function isCryptoSymbol(symbol){
     const row = currentRow(symbol);
     return !!(row && row.asset_class === "krypto");
@@ -708,34 +721,54 @@
       <label class="field">Menge
         <input type="number" id="ap-qty" step="any" min="0" inputmode="decimal" placeholder="z. B. 0,25">
       </label>
-      <label class="field">Einstandskurs pro Einheit (€)
+      <label class="field">Durchschnittlicher Einstandskurs pro Einheit (€)
         <input type="number" id="ap-price" step="any" min="0" inputmode="decimal">
       </label>
-      <label class="field">Kaufdatum
+      <label class="field">Alternativ: Gesamt-Einstandswert (€)
+        <input type="number" id="ap-total" step="any" min="0" inputmode="decimal" placeholder="wenn gefüllt, hat dieser Wert Vorrang">
+      </label>
+      <div class="hint" id="ap-calc">–</div>
+      <label class="field">Kaufdatum (erster Kauf)
         <input type="date" id="ap-date" value="${today}">
+      </label>
+      <label class="field">Höchstkurs seit Kauf (€, optional)
+        <input type="number" id="ap-high" step="any" min="0" inputmode="decimal" placeholder="leer = höherer Wert aus Einstand und heute">
       </label>
       <div class="cta-row">
         <button class="cta primary" id="ap-save">Position speichern</button>
       </div>
-      <div class="hint">Bestehende Bestände werden nicht vom Cash abgezogen. Der Trailing-Stop nutzt als Hoch den höheren Wert aus Einstand und heutigem Kurs und wandert von dort mit.</div>
+      <div class="hint">Wenn du in mehreren Tranchen gekauft hast, trage Gesamtmenge und Gesamt-Einstandswert ein – den Durchschnitt rechne ich aus. Bestehende Bestände werden nicht vom Cash abgezogen. Der Höchstkurs ist die Basis für den Trailing-Stop: kennst du dein tatsächliches Hoch seit Kauf, trag es ein, sonst startet die Marke bei heute.</div>
     `;
+
+    // laufende Anzeige des berechneten Durchschnitts
+    function updateCalc(){
+      const qty = Number(document.getElementById("ap-qty").value);
+      const avg = resolveAvgPrice(qty, document.getElementById("ap-price").value, document.getElementById("ap-total").value);
+      const el = document.getElementById("ap-calc");
+      el.textContent = (qty > 0 && avg > 0)
+        ? "Ø Einstand " + fmtEUR(avg) + " · Einstandswert " + fmtEUR(avg*qty)
+        : "–";
+    }
+    ["ap-qty","ap-price","ap-total"].forEach(id => document.getElementById(id).addEventListener("input", updateCalc));
     document.getElementById("ap-save").addEventListener("click", () => {
       const symbol = document.getElementById("ap-symbol").value;
       const qty = Number(document.getElementById("ap-qty").value);
-      const price = Number(document.getElementById("ap-price").value);
       const date = document.getElementById("ap-date").value || today;
       if(!qty || qty <= 0){ alert("Bitte eine Menge größer als 0 eintragen."); return; }
-      if(!price || price <= 0){ alert("Bitte einen Einstandskurs größer als 0 eintragen."); return; }
+      const price = resolveAvgPrice(qty, document.getElementById("ap-price").value, document.getElementById("ap-total").value);
+      if(!price || price <= 0){ alert("Bitte Einstandskurs oder Gesamt-Einstandswert eintragen."); return; }
+      const highInput = Number(document.getElementById("ap-high").value);
       const row = currentRow(symbol);
       const existing = depot.find(p => p.symbol === symbol);
       if(existing){
         const totalCost = existing.buyPriceEUR*existing.shares + price*qty;
         existing.shares = Math.round((existing.shares + qty) * 1e8) / 1e8;
         existing.buyPriceEUR = round2(totalCost / existing.shares);
+        if(highInput > 0) existing.highestCloseEUR = Math.max(existing.highestCloseEUR||0, highInput);
       } else {
         depot.push({
           symbol, shares:qty, buyPriceEUR:round2(price), buyDate:date,
-          highestCloseEUR: Math.max(price, row ? row.price_eur : price)
+          highestCloseEUR: highInput > 0 ? highInput : Math.max(price, row ? row.price_eur : price)
         });
       }
       journal.push({id:uid(), date, symbol, action:"kauf", shares:qty, priceEUR:round2(price),
@@ -877,11 +910,68 @@
     });
   }
 
+  // Krypto-Liste: alle Coins mit Cluster, Bestand und Stop-Status.
+  // Bewusst eine eigene Sektion - die Aktien-Kaufregeln (Positionslimit,
+  // Sektor-Cap, Markt-Ampel) gelten hier nicht.
+  function renderKrypto(){
+    const list = document.getElementById("crypto-list");
+    const countEl = document.getElementById("crypto-count");
+    list.innerHTML = "";
+    if(!signals){
+      countEl.textContent = "";
+      list.innerHTML = '<div class="empty-row">Keine Daten geladen.</div>';
+      return;
+    }
+    const coins = (signals.crypto_candidates && signals.crypto_candidates.length)
+      ? signals.crypto_candidates
+      : Object.values(universeMap).filter(r => r.asset_class === "krypto");
+    if(!coins.length){
+      countEl.textContent = "";
+      list.innerHTML = '<div class="empty-row">Keine Krypto-Werte in den Daten. Läuft das Skript in der aktuellen Version?</div>';
+      return;
+    }
+    countEl.textContent = coins.length + " Werte";
+    coins.forEach(c => {
+      const held = depot.find(p => p.symbol === c.symbol) || null;
+      const st = held ? positionStatus(held) : null;
+      let second, third = "";
+      if(held){
+        const pct = ((c.price_eur - held.buyPriceEUR) / held.buyPriceEUR) * 100;
+        second = fmtQty(held.shares, true) + " · Ø " + fmtEUR(held.buyPriceEUR) + " · " + fmtPct(pct);
+        if(st){
+          const cls = st.level === "hit" ? "stop-hit" : (st.level === "warn" ? "stop-warn" : "stop-ok");
+          const txt = st.stopHit
+            ? "Stop " + fmtEUR(st.stopPrice) + " · gerissen"
+            : "Stop " + fmtEUR(st.stopPrice) + " · " + st.gapPct.toFixed(1) + "% Luft";
+          third = '<div class="stopline ' + cls + '">' + txt + '</div>';
+        }
+      } else {
+        second = (c.cluster === "A" || c.cluster === "B") ? "nicht im Depot · Trend intakt" : "nicht im Depot";
+      }
+      const el = document.createElement("div");
+      el.className = "row";
+      el.innerHTML = `
+        <span class="badge badge-${c.cluster}">${c.cluster}</span>
+        <div class="symbol-block">
+          <div class="symbol">${c.symbol.replace("-USD","")} <span style="color:var(--text-muted); font-weight:400;">${c.name || ""}</span></div>
+          <div class="name">${second}</div>
+          ${third}
+        </div>
+        <div class="numbers">
+          <div class="price">${fmtEUR(c.price_eur)}</div>
+          <div class="change ${c.rel_strength_pct>0?'up':'down'}">${fmtPct(c.rel_strength_pct)} rS</div>
+        </div>`;
+      el.addEventListener("click", () => openDetail(c.symbol, held ? "manage" : "buy"));
+      list.appendChild(el);
+    });
+  }
+
   function renderStart(){
     renderStaleBanner();
     renderMarketBanner();
     const sells = signals ? computeSellSignals() : [];
     renderSellSection(sells);
+    renderKrypto();
     renderDepot();
     renderDepotKPIs();
     renderCandidates();
@@ -1111,7 +1201,8 @@
       actions = `<div class="cta-row">
         <button class="cta danger" id="act-sell">Verkaufen</button>
         ${canAddMore ? '<button class="cta primary" id="act-buy-more">Nachkaufen</button>' : ''}
-      </div>`;
+      </div>
+      <div class="cta-row"><button class="cta" id="act-edit">Position bearbeiten</button></div>`;
     } else {
       actions = `<div class="cta-row"><button class="cta" id="act-skip">Überspringen</button><button class="cta primary" id="act-buy">Kaufen</button></div>`;
     }
@@ -1141,6 +1232,7 @@
     bind("act-skip", "skip", () => showDecisionForm(symbol, "uebersprungen", row, 0));
     bind("act-skip-sell", "skip", () => closeOverlay());
     bind("act-sell", "sell", () => showDecisionForm(symbol, "verkauf", row, held ? held.shares : 0));
+    bind("act-edit", "edit", () => showEditPositionForm(symbol, held));
 
     // Historie nachladen und nur den Chart-Block neu zeichnen
     if(held && !historyFor(symbol)){
@@ -1155,6 +1247,69 @@
     }
 
     overlay.classList.remove("hidden");
+  }
+
+  // Bestehende Position korrigieren: Menge, Durchschnittseinstand, Datum, Stop-Basis.
+  // Bewusst ohne Journal-Eintrag - eine Korrektur ist keine Handelsentscheidung.
+  function showEditPositionForm(symbol, held){
+    const form = document.getElementById("decision-form");
+    const crypto = isCryptoSymbol(symbol);
+    form.innerHTML = `
+      <h3 class="subhead">Position bearbeiten</h3>
+      <label class="field">${crypto ? "Menge" : "Stückzahl"}
+        <input type="number" id="e-qty" value="${held.shares}" step="${crypto ? "any" : "1"}" min="0" inputmode="decimal">
+      </label>
+      <label class="field">Durchschnittlicher Einstandskurs (€)
+        <input type="number" id="e-price" value="${held.buyPriceEUR}" step="any" min="0" inputmode="decimal">
+      </label>
+      <label class="field">Alternativ: Gesamt-Einstandswert (€)
+        <input type="number" id="e-total" step="any" min="0" inputmode="decimal" placeholder="wenn gefüllt, hat dieser Wert Vorrang">
+      </label>
+      <div class="hint" id="e-calc">–</div>
+      <label class="field">Kaufdatum
+        <input type="date" id="e-date" value="${held.buyDate || ""}">
+      </label>
+      <label class="field">Höchstkurs seit Kauf (€) — Basis für den Trailing-Stop
+        <input type="number" id="e-high" value="${round2(held.highestCloseEUR||0)}" step="any" min="0" inputmode="decimal">
+      </label>
+      <div class="cta-row">
+        <button class="cta primary" id="e-save" style="flex:1;">Änderungen speichern</button>
+      </div>
+      <div class="hint">Menge 0 entfernt die Position aus dem Depot, ohne einen Verkauf zu buchen. Cash und Journal bleiben unberührt.</div>
+    `;
+    function updateCalc(){
+      const qty = Number(document.getElementById("e-qty").value);
+      const avg = resolveAvgPrice(qty, document.getElementById("e-price").value, document.getElementById("e-total").value);
+      document.getElementById("e-calc").textContent = (qty > 0 && avg > 0)
+        ? "Ø Einstand " + fmtEUR(avg) + " · Einstandswert " + fmtEUR(avg*qty)
+        : "–";
+    }
+    ["e-qty","e-price","e-total"].forEach(id => document.getElementById(id).addEventListener("input", updateCalc));
+    updateCalc();
+
+    document.getElementById("e-save").addEventListener("click", () => {
+      const qty = Number(document.getElementById("e-qty").value);
+      if(isNaN(qty) || qty < 0){ alert("Bitte eine gültige Menge eintragen."); return; }
+      const idx = depot.findIndex(p => p.symbol === symbol);
+      if(idx < 0) return;
+      if(qty === 0){
+        if(!confirm("Position ohne Verkaufsbuchung aus dem Depot entfernen?")) return;
+        depot.splice(idx,1);
+      } else {
+        const price = resolveAvgPrice(qty, document.getElementById("e-price").value, document.getElementById("e-total").value);
+        if(!price || price <= 0){ alert("Bitte Einstandskurs oder Gesamt-Einstandswert eintragen."); return; }
+        const high = Number(document.getElementById("e-high").value);
+        const pos = depot[idx];
+        pos.shares = Math.round(qty * 1e8) / 1e8;
+        pos.buyPriceEUR = round2(price);
+        pos.buyDate = document.getElementById("e-date").value || pos.buyDate;
+        pos.highestCloseEUR = high > 0 ? round2(high) : pos.highestCloseEUR;
+      }
+      persistAll();
+      closeOverlay();
+      renderStart();
+      renderDepotKPIs();
+    });
   }
 
   function showDecisionForm(symbol, action, row, defaultShares){
