@@ -175,6 +175,29 @@
   }
   .danger-link{color:var(--rust) !important;}
   #import-file{display:none;}
+
+  /* Verkaufs-Status: Stop-Marke, Regel-Anzeige, Mini-Chart */
+  .row .stopline{font-size:11.5px; font-family:var(--mono); margin-top:3px;}
+  .stop-ok{color:var(--green);} .stop-warn{color:var(--amber);} .stop-hit{color:var(--rust);}
+  .stopbar{
+    position:relative; height:6px; border-radius:3px; background:var(--surface-raised);
+    border:1px solid var(--border); margin:10px 0 6px;
+  }
+  .stopbar .fill{position:absolute; left:0; top:0; bottom:0; border-radius:3px; background:var(--green);}
+  .stopbar .fill.warn{background:var(--amber);} .stopbar .fill.hit{background:var(--rust);}
+  .stopbar .tick{position:absolute; top:-4px; width:2px; height:14px; background:var(--text); border-radius:1px;}
+  .stopbar-legend{display:flex; justify-content:space-between; font-size:10.5px; color:var(--text-muted); font-family:var(--mono);}
+  .rulebox{border:1px solid var(--border); border-radius:10px; padding:4px 14px; margin:16px 0;}
+  .rulebox .rule{display:flex; align-items:flex-start; gap:10px; padding:11px 0; border-top:1px solid var(--border);}
+  .rulebox .rule:first-child{border-top:none;}
+  .rulebox .mark{font-family:var(--mono); font-size:13px; flex-shrink:0; width:14px; text-align:center;}
+  .rulebox .rtitle{font-size:13.5px;}
+  .rulebox .rsub{font-size:11.5px; color:var(--text-muted); margin-top:2px; font-family:var(--mono);}
+  .mini-wrap{margin:16px 0;}
+  .mini-wrap .mc-label{font-size:11px; color:var(--text-muted); margin-bottom:6px;}
+  .mini-wrap svg{display:block; width:100%; height:auto; border:1px solid var(--border); border-radius:10px; background:var(--surface);}
+  .mini-legend{display:flex; gap:14px; flex-wrap:wrap; margin-top:6px; font-size:10.5px; color:var(--text-muted); font-family:var(--mono);}
+  .mini-legend i{display:inline-block; width:12px; height:0; border-top:2px solid; margin-right:4px; vertical-align:2px;}
 </style>
 </head>
 <body>
@@ -394,23 +417,56 @@
     return Math.max(total / settings.maxPositions, 500);
   }
 
-  // aktualisiert highestCloseEUR je Position (fuer Trailing-Stop) und liefert Verkaufssignale
+  // Kurs in EUR umrechnen (signals.json liefert USD-Kennzahlen)
+  function toEUR(usd){
+    if(usd === null || usd === undefined) return null;
+    return signals && signals.fx_eur_usd ? usd / signals.fx_eur_usd : usd;
+  }
+
+  // Zentraler Verkaufs-Status einer Position: Stop-Marke, Abstand, beide Regeln.
+  // Wird von Depot-Liste, Verkaufssignalen und Detailansicht gemeinsam genutzt,
+  // damit ueberall dieselben Zahlen stehen.
+  function positionStatus(p){
+    const row = currentRow(p.symbol);
+    if(!row) return null;
+    if(!p.highestCloseEUR || row.price_eur > p.highestCloseEUR){
+      p.highestCloseEUR = row.price_eur;
+    }
+    const atrEUR = toEUR(row.atr14);
+    const stopPrice = p.highestCloseEUR - settings.stopATRMultiple * atrEUR;
+    const price = row.price_eur;
+
+    // Abstand zur Stop-Marke: in Prozent und in ATR-Einheiten (1 ATR = eine
+    // uebliche Tagesschwankung, also "noch ein normaler Tag Luft")
+    const gapEUR = price - stopPrice;
+    const gapPct = (gapEUR / price) * 100;
+    const gapATR = atrEUR > 0 ? gapEUR / atrEUR : 0;
+
+    const stopHit = price <= stopPrice;
+    const clusterHit = row.cluster === "D";
+
+    const reasons = [];
+    if(clusterHit) reasons.push("Cluster D (Trendbruch)");
+    if(stopHit) reasons.push("Trailing-Stop gerissen (" + fmtEUR(stopPrice) + ")");
+
+    let level = "ok";
+    if(stopHit || clusterHit) level = "hit";
+    else if(gapATR < 1) level = "warn";
+
+    return {
+      position:p, row, price, stopPrice, atrEUR,
+      high:p.highestCloseEUR, gapEUR, gapPct, gapATR,
+      stopHit, clusterHit, reasons, level,
+      sma200EUR: toEUR(row.sma200)
+    };
+  }
+
+  // aktualisiert highestCloseEUR je Position und liefert nur die aktiven Signale
   function computeSellSignals(){
     const signalsOut = [];
     depot.forEach(p => {
-      const row = currentRow(p.symbol);
-      if(!row) return;
-      if(!p.highestCloseEUR || row.price_eur > p.highestCloseEUR){
-        p.highestCloseEUR = row.price_eur;
-      }
-      const atrEUR = signals.fx_eur_usd ? row.atr14 / signals.fx_eur_usd : row.atr14;
-      const stopPrice = p.highestCloseEUR - settings.stopATRMultiple * atrEUR;
-      const reasons = [];
-      if(row.cluster === "D") reasons.push("Cluster D (Trendbruch)");
-      if(row.price_eur <= stopPrice) reasons.push("Trailing-Stop erreicht (" + fmtEUR(stopPrice) + ")");
-      if(reasons.length){
-        signalsOut.push({position:p, row, reasons, stopPrice});
-      }
+      const st = positionStatus(p);
+      if(st && st.reasons.length) signalsOut.push(st);
     });
     save(K_DEPOT, depot);
     return signalsOut;
@@ -475,9 +531,11 @@
         <div class="symbol-block">
           <div class="symbol">${s.position.symbol}</div>
           <div class="name">${s.reasons.join(" · ")}</div>
+          <div class="stopline stop-hit">Stop ${fmtEUR(s.stopPrice)} · Hoch ${fmtEUR(s.high)}</div>
         </div>
         <div class="numbers">
-          <div class="price">${fmtEUR(s.row.price_eur)}</div>
+          <div class="price">${fmtEUR(s.price)}</div>
+          <div class="change down">${fmtPct(s.gapPct)}</div>
         </div>`;
       row.addEventListener("click", () => openDetail(s.position.symbol, "sell"));
       list.appendChild(row);
@@ -497,6 +555,16 @@
       const price = row ? row.price_eur : p.buyPriceEUR;
       const pct = ((price - p.buyPriceEUR) / p.buyPriceEUR) * 100;
       const cluster = row ? row.cluster : "?";
+      const st = row ? positionStatus(p) : null;
+      // Stop-Marke und verbleibende Luft dauerhaft anzeigen, nicht erst im Signalfall
+      let stopLine = '<div class="stopline flat">Stop: keine Kursdaten</div>';
+      if(st){
+        const cls = st.level === "hit" ? "stop-hit" : (st.level === "warn" ? "stop-warn" : "stop-ok");
+        const txt = st.stopHit
+          ? "Stop " + fmtEUR(st.stopPrice) + " · gerissen"
+          : "Stop " + fmtEUR(st.stopPrice) + " · " + st.gapPct.toFixed(1) + "% Luft (" + st.gapATR.toFixed(1) + "×ATR)";
+        stopLine = '<div class="stopline ' + cls + '">' + txt + '</div>';
+      }
       const el = document.createElement("div");
       el.className = "row";
       el.innerHTML = `
@@ -504,6 +572,7 @@
         <div class="symbol-block">
           <div class="symbol">${p.symbol}</div>
           <div class="name">${p.shares} Stk · seit ${p.buyDate}</div>
+          ${stopLine}
         </div>
         <div class="numbers">
           <div class="price">${fmtEUR(price)}</div>
@@ -662,6 +731,89 @@
   const overlayBody = document.getElementById("overlay-body");
   const overlayBadge = document.getElementById("overlay-cluster-badge");
 
+  // Stop-Panel: zeigt, wo der Kurs zwischen Stop-Marke und Hoch seit Kauf steht
+  function renderStopPanel(st){
+    const span = st.high - st.stopPrice;
+    let posPct = span > 0 ? ((st.price - st.stopPrice) / span) * 100 : 0;
+    posPct = Math.max(0, Math.min(100, posPct));
+    const fillCls = st.level === "hit" ? "hit" : (st.level === "warn" ? "warn" : "");
+    const buyPct = span > 0 ? Math.max(0, Math.min(100, ((st.buyPrice - st.stopPrice) / span) * 100)) : 0;
+    return `
+      <div class="stopbar">
+        <div class="fill ${fillCls}" style="width:${posPct.toFixed(1)}%"></div>
+        <div class="tick" style="left:calc(${buyPct.toFixed(1)}% - 1px)" title="Kaufkurs"></div>
+      </div>
+      <div class="stopbar-legend">
+        <span>Stop ${fmtEUR(st.stopPrice)}</span>
+        <span>Kurs ${fmtEUR(st.price)}</span>
+        <span>Hoch ${fmtEUR(st.high)}</span>
+      </div>
+      <div class="hint">Der senkrechte Strich ist dein Kaufkurs (${fmtEUR(st.buyPrice)}). Die Stop-Marke wandert mit dem Hoch nach oben, nie nach unten.</div>`;
+  }
+
+  // Regel-Kasten: beide Verkaufsregeln getrennt mit aktuellem Stand
+  function renderRuleBox(st){
+    const r1 = st.stopHit;
+    const r2 = st.clusterHit;
+    const r1sub = r1
+      ? "Kurs " + fmtEUR(st.price) + " liegt unter der Marke " + fmtEUR(st.stopPrice)
+      : "Noch " + st.gapPct.toFixed(1) + "% bzw. " + st.gapATR.toFixed(1) + "×ATR Luft bis " + fmtEUR(st.stopPrice);
+    const r2sub = r2
+      ? (st.row.cluster_reason || "Trend gebrochen")
+      : "Cluster " + st.row.cluster + " · SMA200 " + (st.sma200EUR!==null ? fmtEUR(st.sma200EUR) : "–") + " · Momentum " + fmtPct(st.row.momentum_pct);
+    function rule(hit, title, sub){
+      return `<div class="rule">
+        <div class="mark ${hit?'stop-hit':'stop-ok'}">${hit?'●':'○'}</div>
+        <div>
+          <div class="rtitle">${title}</div>
+          <div class="rsub">${sub}</div>
+        </div>
+      </div>`;
+    }
+    return `<div class="rulebox">
+      ${rule(r1, "Regel 1 · Trailing-Stop (" + settings.stopATRMultiple + "×ATR)", r1sub)}
+      ${rule(r2, "Regel 2 · Cluster D (Trendbruch)", r2sub)}
+    </div>
+    <div class="hint">Verkaufssignal, sobald eine der beiden Regeln zutrifft. Regel 1 greift in einem intakten Trend fast immer zuerst.</div>`;
+  }
+
+  // Mini-Chart: Kursverlauf mit Stop-Marke und 200-Tage-Linie.
+  // Nutzt row.history (Schlusskurse in USD, aeltester zuerst), sobald
+  // generate_signals.py diese in signals.json mitliefert.
+  function renderMiniChart(st){
+    const hist = st.row.history;
+    if(!Array.isArray(hist) || hist.length < 10){
+      return `<div class="mini-wrap"><div class="mc-label">Kursverlauf</div>
+        <div class="hint">Noch keine Historie in signals.json. Sobald generate_signals.py die letzten Schlusskurse je Depotwert mitschreibt, erscheint hier der Verlauf mit Stop-Marke.</div></div>`;
+    }
+    const data = hist.slice(-120).map(v => toEUR(v));
+    const W = 320, H = 96, PAD = 6;
+    const stop = st.stopPrice, sma = st.sma200EUR;
+    const vals = data.concat([stop]);
+    if(sma !== null && sma !== undefined) vals.push(sma);
+    const lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+    const range = (hi - lo) || 1;
+    const x = i => PAD + (i / (data.length - 1)) * (W - 2*PAD);
+    const y = v => PAD + (1 - (v - lo) / range) * (H - 2*PAD);
+    const pts = data.map((v,i) => x(i).toFixed(1) + "," + y(v).toFixed(1)).join(" ");
+    const smaLine = (sma !== null && sma !== undefined)
+      ? `<line x1="${PAD}" y1="${y(sma).toFixed(1)}" x2="${W-PAD}" y2="${y(sma).toFixed(1)}" stroke="#C08A3E" stroke-width="1.2" stroke-dasharray="5 4"/>` : "";
+    return `<div class="mini-wrap">
+      <div class="mc-label">Kursverlauf · letzte ${data.length} Handelstage</div>
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Kursverlauf mit Stop-Marke und 200-Tage-Linie">
+        ${smaLine}
+        <line x1="${PAD}" y1="${y(stop).toFixed(1)}" x2="${W-PAD}" y2="${y(stop).toFixed(1)}" stroke="#C0603E" stroke-width="1.2" stroke-dasharray="2 3"/>
+        <polyline points="${pts}" fill="none" stroke="#C7A15A" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="${x(data.length-1).toFixed(1)}" cy="${y(data[data.length-1]).toFixed(1)}" r="2.6" fill="#ECE9E2"/>
+      </svg>
+      <div class="mini-legend">
+        <span><i style="border-color:#C7A15A"></i>Kurs</span>
+        <span><i style="border-color:#C0603E"></i>Stop ${fmtEUR(stop)}</span>
+        ${(sma!==null&&sma!==undefined)?`<span><i style="border-color:#C08A3E"></i>200-Tage-Linie</span>`:""}
+      </div>
+    </div>`;
+  }
+
   function openDetail(symbol, mode){
     const row = currentRow(symbol);
     if(!row){ return; }
@@ -689,6 +841,20 @@
 
     const earnings = row.earnings_soon ? `<div class="banner warn">Earnings-Termin in Kürze${row.earnings_date ? " ("+row.earnings_date+")" : ""}.</div>` : "";
 
+    // Verkaufs-Status nur fuer gehaltene Positionen
+    let sellStatus = "";
+    if(held){
+      const st = positionStatus(held);
+      if(st){
+        st.buyPrice = held.buyPriceEUR;
+        sellStatus = `
+          <h3 class="subhead">Verkaufs-Status</h3>
+          ${renderStopPanel(st)}
+          ${renderMiniChart(st)}
+          ${renderRuleBox(st)}`;
+      }
+    }
+
     let actions = "";
     if(mode === "sell"){
       actions = `<div class="cta-row"><button class="cta danger" id="act-sell">Verkaufen</button><button class="cta" id="act-skip-sell">Noch halten</button></div>`;
@@ -706,6 +872,7 @@
       <div class="overlay-title">${symbol}</div>
       <div class="overlay-sub">${row.name || ""} · ${row.sector || ""}</div>
       ${earnings}
+      ${sellStatus}
       ${factGrid}
       ${commentary}
       ${held ? `<div class="hint">Du hältst ${held.shares} Stk, Kaufkurs ${fmtEUR(held.buyPriceEUR)}.</div>` : ""}
