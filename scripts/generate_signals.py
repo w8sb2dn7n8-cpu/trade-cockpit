@@ -42,6 +42,10 @@ TOP_N_CANDIDATES = 10           # die App filtert/kuerzt davon selbst weiter (Po
 CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-4-5-20251001")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "docs", "data", "signals.json")
+# Kurshistorie liegt in einer eigenen Datei, damit signals.json klein und schnell bleibt.
+# Die App laedt sie erst, wenn du eine Depotposition oeffnest.
+HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "docs", "data", "history.json")
+HISTORY_DAYS = 120             # Handelstage im Mini-Chart der App
 
 WIKI_SP500_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 
@@ -149,8 +153,12 @@ def analyze_ticker(symbol, df_ticker, spy_momentum):
 
     dist_to_sma50_pct = (last_close - last_sma50) / last_sma50 * 100
 
+    # Schlusskurse fuer den Mini-Chart in der App (aeltester zuerst, USD)
+    history = [round(float(x), 2) for x in close.tail(HISTORY_DAYS).tolist()]
+
     return {
         "symbol": symbol,
+        "_history": history,
         "price_usd": round(float(last_close), 2),
         "sma50": round(float(last_sma50), 2),
         "sma200": round(float(last_sma200), 2),
@@ -326,13 +334,18 @@ def main():
     log("Hole Claude-Kurzeinordnung fuer Kandidaten ...")
     top_candidates = get_claude_commentary(top_candidates, name_lookup)
 
+    # Kurshistorie in eigene Datei auslagern (bevor die Hilfsfelder entfernt werden)
+    history_out = {r["symbol"]: r["_history"] for r in rows if r.get("_history")}
+
     # interne Hilfsfelder aus der Ausgabe entfernen
     for r in rows:
         r.pop("_below_sma200_2days", None)
         r.pop("_sma50_below_sma200", None)
+        r.pop("_history", None)
     for c in top_candidates:
         c.pop("_below_sma200_2days", None)
         c.pop("_sma50_below_sma200", None)
+        c.pop("_history", None)
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -351,6 +364,16 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+
+    # kompakt schreiben (ohne Einrueckung), sonst wird die Datei unnoetig gross
+    with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(
+            {"generated_at": output["generated_at"], "days": HISTORY_DAYS, "close_usd": history_out},
+            f,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+    log(f"Kurshistorie fuer {len(history_out)} Ticker geschrieben: {HISTORY_PATH}")
 
     log(f"Fertig. {len(top_candidates)} Kandidaten, {len(rows)} Ticker im Universum. "
         f"Markt-Filter risk_on={market_risk_on}. Datei: {OUTPUT_PATH}")
