@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-26T04:08:23.367970+00:00",
+  "generated_at": "2026-11-27T04:12:45.528652+00:00",
   "market_filter": {
     "spy_price": 716.7,
     "spy_sma200": 730.77,
     "spy_momentum_6m_pct": -4.5,
     "risk_on": false
   },
-  "fx_eur_usd": 1.0964,
+  "fx_eur_usd": 1.0977,
   "universe_count": 504,
   "crypto_count": 4,
   "top_candidates": [
@@ -23,7 +23,7 @@
       "name": "Moderna",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 201.43,
+      "price_eur": 201.19,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -44,7 +44,7 @@
       "name": "Okta, Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 184.03,
+      "price_eur": 183.81,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": true,
@@ -65,7 +65,7 @@
       "name": "Charles River Laboratories",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 302.89,
+      "price_eur": 302.52,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -86,7 +86,7 @@
       "name": "Regeneron Pharmaceuticals",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 895.56,
+      "price_eur": 894.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -107,7 +107,7 @@
       "name": "CDW Corporation",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 159.59,
+      "price_eur": 159.4,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -128,7 +128,7 @@
       "name": "Roper Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 440.63,
+      "price_eur": 440.09,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -149,7 +149,7 @@
       "name": "Becton Dickinson",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 201.79,
+      "price_eur": 201.55,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -170,7 +170,7 @@
       "name": "Allegion",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 175.31,
+      "price_eur": 175.09,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -191,7 +191,7 @@
       "name": "Automatic Data Processing",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 288.88,
+      "price_eur": 288.53,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -212,7 +212,7 @@
       "name": "Arthur J. Gallagher & Co.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 266.69,
+      "price_eur": 266.37,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500.",
       "earnings_soon": false,
@@ -223,38 +223,38 @@
   ],
   "crypto_candidates": [
     {
-      "symbol": "BTC-USD",
-      "price_usd": 60844.82,
-      "sma50": 75143.5,
-      "sma200": 72030.79,
-      "rsi14": 29.3,
-      "atr14": 2870.28,
-      "momentum_pct": -8.0,
-      "rel_strength_pct": -3.4,
-      "dist_to_sma50_pct": -19.0,
-      "name": "Bitcoin",
+      "symbol": "SOL-USD",
+      "price_usd": 72.5,
+      "sma50": 91.31,
+      "sma200": 87.89,
+      "rsi14": 36.2,
+      "atr14": 4.44,
+      "momentum_pct": -4.4,
+      "rel_strength_pct": 0.1,
+      "dist_to_sma50_pct": -20.6,
+      "name": "Solana",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 55496.56,
+      "price_eur": 66.05,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum.",
       "commentary_pro": null,
       "commentary_con": null
     },
     {
-      "symbol": "SOL-USD",
-      "price_usd": 71.09,
-      "sma50": 92.2,
-      "sma200": 88.02,
-      "rsi14": 32.7,
-      "atr14": 4.35,
-      "momentum_pct": -8.7,
-      "rel_strength_pct": -4.2,
-      "dist_to_sma50_pct": -22.9,
-      "name": "Solana",
+      "symbol": "BTC-USD",
+      "price_usd": 61394.1,
+      "sma50": 74696.53,
+      "sma200": 71924.73,
+      "rsi14": 31.6,
+      "atr14": 2883.32,
+      "momentum_pct": -5.6,
+      "rel_strength_pct": -1.1,
+      "dist_to_sma50_pct": -17.8,
+      "name": "Bitcoin",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 64.84,
+      "price_eur": 55930.02,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum.",
       "commentary_pro": null,
@@ -262,18 +262,18 @@
     },
     {
       "symbol": "ETH-USD",
-      "price_usd": 1699.63,
-      "sma50": 2185.07,
-      "sma200": 2113.08,
-      "rsi14": 30.5,
-      "atr14": 101.91,
-      "momentum_pct": -12.1,
-      "rel_strength_pct": -7.6,
-      "dist_to_sma50_pct": -22.2,
+      "price_usd": 1727.18,
+      "sma50": 2167.97,
+      "sma200": 2109.82,
+      "rsi14": 33.5,
+      "atr14": 101.86,
+      "momentum_pct": -8.0,
+      "rel_strength_pct": -3.4,
+      "dist_to_sma50_pct": -20.3,
       "name": "Ethereum",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 1550.23,
+      "price_eur": 1573.46,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum.",
       "commentary_pro": null,
@@ -282,17 +282,17 @@
     {
       "symbol": "XRP-USD",
       "price_usd": 0.96,
-      "sma50": 1.19,
+      "sma50": 1.18,
       "sma200": 1.23,
-      "rsi14": 36.6,
+      "rsi14": 36.9,
       "atr14": 0.06,
-      "momentum_pct": -16.1,
-      "rel_strength_pct": -11.5,
-      "dist_to_sma50_pct": -19.5,
+      "momentum_pct": -13.4,
+      "rel_strength_pct": -8.8,
+      "dist_to_sma50_pct": -18.8,
       "name": "XRP",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 0.88,
+      "price_eur": 0.87,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum.",
       "commentary_pro": null,
@@ -313,7 +313,7 @@
       "name": "3M",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 173.14,
+      "price_eur": 172.94,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -330,7 +330,7 @@
       "name": "A. O. Smith",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 61.37,
+      "price_eur": 61.29,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -347,7 +347,7 @@
       "name": "Abbott Laboratories",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 98.51,
+      "price_eur": 98.39,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -364,7 +364,7 @@
       "name": "AbbVie",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 268.6,
+      "price_eur": 268.27,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -381,7 +381,7 @@
       "name": "Accenture",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 219.35,
+      "price_eur": 219.09,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -398,7 +398,7 @@
       "name": "Adobe Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 212.36,
+      "price_eur": 212.11,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -415,7 +415,7 @@
       "name": "Advanced Micro Devices",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 370.34,
+      "price_eur": 369.89,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -432,7 +432,7 @@
       "name": "AES Corporation",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 13.7,
+      "price_eur": 13.68,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -449,7 +449,7 @@
       "name": "Aflac",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 116.3,
+      "price_eur": 116.16,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -466,7 +466,7 @@
       "name": "Agilent Technologies",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 162.76,
+      "price_eur": 162.56,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -483,7 +483,7 @@
       "name": "Air Products",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 286.64,
+      "price_eur": 286.29,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -500,7 +500,7 @@
       "name": "Airbnb",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 157.02,
+      "price_eur": 156.83,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -517,7 +517,7 @@
       "name": "Akamai Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 80.87,
+      "price_eur": 80.77,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -534,7 +534,7 @@
       "name": "Albemarle Corporation",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 74.34,
+      "price_eur": 74.25,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -551,7 +551,7 @@
       "name": "Alexandria Real Estate Equities",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 39.3,
+      "price_eur": 39.25,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -568,7 +568,7 @@
       "name": "Align Technology",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 150.86,
+      "price_eur": 150.68,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -585,7 +585,7 @@
       "name": "Allegion",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 175.31,
+      "price_eur": 175.09,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -602,7 +602,7 @@
       "name": "Alliant Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 66.71,
+      "price_eur": 66.63,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -619,7 +619,7 @@
       "name": "Allstate",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 247.53,
+      "price_eur": 247.24,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -636,7 +636,7 @@
       "name": "Alphabet Inc. (Class A)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 249.09,
+      "price_eur": 248.79,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -653,7 +653,7 @@
       "name": "Alphabet Inc. (Class C)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 247.16,
+      "price_eur": 246.86,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -670,7 +670,7 @@
       "name": "Altria",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 69.57,
+      "price_eur": 69.49,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -687,7 +687,7 @@
       "name": "Amazon",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 222.94,
+      "price_eur": 222.68,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -704,7 +704,7 @@
       "name": "Amcor",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 41.43,
+      "price_eur": 41.38,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -721,7 +721,7 @@
       "name": "Ameren",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 104.78,
+      "price_eur": 104.66,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -738,7 +738,7 @@
       "name": "American Electric Power",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 116.37,
+      "price_eur": 116.23,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -755,7 +755,7 @@
       "name": "American Express",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 284.93,
+      "price_eur": 284.59,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -772,7 +772,7 @@
       "name": "American International Group",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 75.0,
+      "price_eur": 74.91,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -789,7 +789,7 @@
       "name": "American Tower",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 168.36,
+      "price_eur": 168.16,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -806,7 +806,7 @@
       "name": "American Water Works",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 139.41,
+      "price_eur": 139.24,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -823,7 +823,7 @@
       "name": "Ameriprise Financial",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 460.59,
+      "price_eur": 460.04,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -840,7 +840,7 @@
       "name": "Ametek",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 207.49,
+      "price_eur": 207.24,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -857,7 +857,7 @@
       "name": "Amgen",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 427.99,
+      "price_eur": 427.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -874,7 +874,7 @@
       "name": "Amphenol",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 66.66,
+      "price_eur": 66.58,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -891,7 +891,7 @@
       "name": "Analog Devices",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 303.83,
+      "price_eur": 303.46,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -908,7 +908,7 @@
       "name": "Aon plc",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 316.95,
+      "price_eur": 316.56,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -925,7 +925,7 @@
       "name": "APA Corporation",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 41.48,
+      "price_eur": 41.43,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -942,7 +942,7 @@
       "name": "Apollo Global Management",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 109.89,
+      "price_eur": 109.76,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -959,7 +959,7 @@
       "name": "Apple Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 324.32,
+      "price_eur": 323.93,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -976,7 +976,7 @@
       "name": "Applied Materials",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 283.83,
+      "price_eur": 283.48,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -993,7 +993,7 @@
       "name": "AppLovin",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 345.64,
+      "price_eur": 345.22,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1010,7 +1010,7 @@
       "name": "Aptiv",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 34.25,
+      "price_eur": 34.21,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1027,7 +1027,7 @@
       "name": "Arch Capital Group",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 100.6,
+      "price_eur": 100.47,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1044,7 +1044,7 @@
       "name": "Archer Daniels Midland",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 60.8,
+      "price_eur": 60.73,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1061,7 +1061,7 @@
       "name": "Ares Management",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 122.17,
+      "price_eur": 122.02,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1078,7 +1078,7 @@
       "name": "Arista Networks",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 149.58,
+      "price_eur": 149.39,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1095,7 +1095,7 @@
       "name": "Arthur J. Gallagher & Co.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 266.69,
+      "price_eur": 266.37,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1112,7 +1112,7 @@
       "name": "Assurant",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 297.1,
+      "price_eur": 296.74,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1129,7 +1129,7 @@
       "name": "AT&T",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 20.95,
+      "price_eur": 20.93,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1146,7 +1146,7 @@
       "name": "Atmos Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 158.03,
+      "price_eur": 157.84,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1163,7 +1163,7 @@
       "name": "Autodesk",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 225.1,
+      "price_eur": 224.83,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -1180,7 +1180,7 @@
       "name": "Automatic Data Processing",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 288.88,
+      "price_eur": 288.53,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1197,7 +1197,7 @@
       "name": "AutoZone",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 3105.21,
+      "price_eur": 3101.46,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1214,7 +1214,7 @@
       "name": "Avery Dennison",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 174.79,
+      "price_eur": 174.58,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1231,7 +1231,7 @@
       "name": "Axon Enterprise",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 312.9,
+      "price_eur": 312.52,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1248,7 +1248,7 @@
       "name": "Baker Hughes",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 42.28,
+      "price_eur": 42.23,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1265,7 +1265,7 @@
       "name": "Ball Corporation",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 61.27,
+      "price_eur": 61.2,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1282,7 +1282,7 @@
       "name": "Bank of America",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 44.27,
+      "price_eur": 44.22,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1299,7 +1299,7 @@
       "name": "Baxter International",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 24.86,
+      "price_eur": 24.83,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1316,7 +1316,7 @@
       "name": "Becton Dickinson",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 201.79,
+      "price_eur": 201.55,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1333,7 +1333,7 @@
       "name": "Berkshire Hathaway",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 528.4,
+      "price_eur": 527.76,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1350,7 +1350,7 @@
       "name": "Best Buy",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 93.56,
+      "price_eur": 93.45,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1367,7 +1367,7 @@
       "name": "Bio-Techne",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 66.26,
+      "price_eur": 66.18,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1384,7 +1384,7 @@
       "name": "Biogen",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 238.46,
+      "price_eur": 238.17,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1401,7 +1401,7 @@
       "name": "BlackRock",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 1041.49,
+      "price_eur": 1040.23,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -1418,7 +1418,7 @@
       "name": "Blackstone Inc.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 108.49,
+      "price_eur": 108.36,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1435,7 +1435,7 @@
       "name": "Block, Inc.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 69.41,
+      "price_eur": 69.33,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -1452,7 +1452,7 @@
       "name": "Bloom Energy",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 139.45,
+      "price_eur": 139.28,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1469,7 +1469,7 @@
       "name": "BNY Mellon",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 134.22,
+      "price_eur": 134.06,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -1486,7 +1486,7 @@
       "name": "Boeing",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 150.07,
+      "price_eur": 149.89,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1503,7 +1503,7 @@
       "name": "Booking Holdings",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 136.36,
+      "price_eur": 136.19,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1520,7 +1520,7 @@
       "name": "Boston Scientific",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 41.15,
+      "price_eur": 41.1,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1537,7 +1537,7 @@
       "name": "Bristol Myers Squibb",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 56.15,
+      "price_eur": 56.08,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -1554,7 +1554,7 @@
       "name": "Broadcom",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 274.41,
+      "price_eur": 274.08,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1571,7 +1571,7 @@
       "name": "Broadridge Financial Solutions",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 170.69,
+      "price_eur": 170.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1588,7 +1588,7 @@
       "name": "Brown & Brown",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 71.54,
+      "price_eur": 71.45,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1605,7 +1605,7 @@
       "name": "Brown–Forman",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 27.02,
+      "price_eur": 26.98,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1622,7 +1622,7 @@
       "name": "Bunge Global",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 80.4,
+      "price_eur": 80.3,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1639,7 +1639,7 @@
       "name": "BXP, Inc.",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 58.39,
+      "price_eur": 58.32,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1656,7 +1656,7 @@
       "name": "C.H. Robinson",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 132.09,
+      "price_eur": 131.93,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1673,7 +1673,7 @@
       "name": "Cadence Design Systems",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 268.97,
+      "price_eur": 268.64,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1690,7 +1690,7 @@
       "name": "Camden Property Trust",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 90.53,
+      "price_eur": 90.42,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1707,7 +1707,7 @@
       "name": "Capital One",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 166.48,
+      "price_eur": 166.28,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1724,7 +1724,7 @@
       "name": "Cardinal Health",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 258.04,
+      "price_eur": 257.73,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1741,7 +1741,7 @@
       "name": "Carnival Corporation",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 25.54,
+      "price_eur": 25.51,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1758,7 +1758,7 @@
       "name": "Carrier Global",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 49.16,
+      "price_eur": 49.1,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1775,7 +1775,7 @@
       "name": "Carvana",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 61.88,
+      "price_eur": 61.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1792,7 +1792,7 @@
       "name": "Casey's",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 636.88,
+      "price_eur": 636.11,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1809,7 +1809,7 @@
       "name": "Caterpillar Inc.",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 495.9,
+      "price_eur": 495.3,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1826,7 +1826,7 @@
       "name": "Cboe Global Markets",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 320.88,
+      "price_eur": 320.49,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1843,7 +1843,7 @@
       "name": "CBRE Group",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 125.77,
+      "price_eur": 125.62,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1860,7 +1860,7 @@
       "name": "CDW Corporation",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 159.59,
+      "price_eur": 159.4,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1877,7 +1877,7 @@
       "name": "Cencora",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 322.93,
+      "price_eur": 322.54,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1894,7 +1894,7 @@
       "name": "Centene Corporation",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 59.05,
+      "price_eur": 58.98,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -1911,7 +1911,7 @@
       "name": "CenterPoint Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 36.84,
+      "price_eur": 36.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1928,7 +1928,7 @@
       "name": "CF Industries",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 107.17,
+      "price_eur": 107.04,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1945,7 +1945,7 @@
       "name": "Charles River Laboratories",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 302.89,
+      "price_eur": 302.52,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -1962,7 +1962,7 @@
       "name": "Charles Schwab Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 85.24,
+      "price_eur": 85.13,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1979,7 +1979,7 @@
       "name": "Charter Communications",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 134.32,
+      "price_eur": 134.16,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -1996,7 +1996,7 @@
       "name": "Chevron Corporation",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 192.41,
+      "price_eur": 192.18,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2013,7 +2013,7 @@
       "name": "Chipotle Mexican Grill",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 34.11,
+      "price_eur": 34.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2030,7 +2030,7 @@
       "name": "Chubb Limited",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 347.06,
+      "price_eur": 346.64,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2047,7 +2047,7 @@
       "name": "Church & Dwight",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 103.35,
+      "price_eur": 103.23,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2064,7 +2064,7 @@
       "name": "Ciena",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 221.45,
+      "price_eur": 221.18,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2081,7 +2081,7 @@
       "name": "Cigna",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 247.56,
+      "price_eur": 247.26,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2098,7 +2098,7 @@
       "name": "Cincinnati Financial",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 175.42,
+      "price_eur": 175.2,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2115,7 +2115,7 @@
       "name": "Cintas",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 207.64,
+      "price_eur": 207.39,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -2132,7 +2132,7 @@
       "name": "Cisco",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 85.92,
+      "price_eur": 85.82,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2149,7 +2149,7 @@
       "name": "Citigroup",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 103.37,
+      "price_eur": 103.24,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2166,7 +2166,7 @@
       "name": "Citizens Financial Group",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 56.33,
+      "price_eur": 56.26,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2183,7 +2183,7 @@
       "name": "Clorox",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 101.19,
+      "price_eur": 101.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2200,7 +2200,7 @@
       "name": "CME Group",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 284.34,
+      "price_eur": 284.0,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2217,7 +2217,7 @@
       "name": "CMS Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 65.31,
+      "price_eur": 65.23,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2234,7 +2234,7 @@
       "name": "Coca-Cola Company (The)",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 89.01,
+      "price_eur": 88.9,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -2251,7 +2251,7 @@
       "name": "Cognizant",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 57.75,
+      "price_eur": 57.68,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2268,7 +2268,7 @@
       "name": "Coherent Corp.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 178.94,
+      "price_eur": 178.73,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2285,7 +2285,7 @@
       "name": "Coinbase",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 94.6,
+      "price_eur": 94.49,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2302,7 +2302,7 @@
       "name": "Colgate-Palmolive",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 90.9,
+      "price_eur": 90.79,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2319,7 +2319,7 @@
       "name": "Comcast",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 23.47,
+      "price_eur": 23.44,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2336,7 +2336,7 @@
       "name": "Comfort Systems USA",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 1002.93,
+      "price_eur": 1001.72,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2353,7 +2353,7 @@
       "name": "ConocoPhillips",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 123.15,
+      "price_eur": 123.0,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2370,7 +2370,7 @@
       "name": "Consolidated Edison",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 109.79,
+      "price_eur": 109.66,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2387,7 +2387,7 @@
       "name": "Constellation Brands",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 127.67,
+      "price_eur": 127.51,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2404,7 +2404,7 @@
       "name": "Constellation Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 214.6,
+      "price_eur": 214.34,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2421,7 +2421,7 @@
       "name": "Cooper Companies (The)",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 56.81,
+      "price_eur": 56.75,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2438,7 +2438,7 @@
       "name": "Copart",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 30.25,
+      "price_eur": 30.22,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2455,7 +2455,7 @@
       "name": "Corning Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 91.43,
+      "price_eur": 91.32,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2472,7 +2472,7 @@
       "name": "Corpay",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 414.39,
+      "price_eur": 413.89,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -2489,7 +2489,7 @@
       "name": "CoStar Group",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 31.03,
+      "price_eur": 30.99,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2506,7 +2506,7 @@
       "name": "Costco",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 991.28,
+      "price_eur": 990.08,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2523,7 +2523,7 @@
       "name": "CRH plc",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 88.75,
+      "price_eur": 88.64,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2540,7 +2540,7 @@
       "name": "CrowdStrike",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 190.9,
+      "price_eur": 190.67,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2557,7 +2557,7 @@
       "name": "Crown Castle",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 76.28,
+      "price_eur": 76.19,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2574,7 +2574,7 @@
       "name": "CSX Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 46.66,
+      "price_eur": 46.61,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2591,7 +2591,7 @@
       "name": "Cummins",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 383.74,
+      "price_eur": 383.28,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2608,7 +2608,7 @@
       "name": "CVS Health",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 73.93,
+      "price_eur": 73.85,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2625,7 +2625,7 @@
       "name": "Danaher Corporation",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 207.37,
+      "price_eur": 207.12,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -2642,7 +2642,7 @@
       "name": "Darden Restaurants",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 219.96,
+      "price_eur": 219.7,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -2659,7 +2659,7 @@
       "name": "Datadog",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 144.34,
+      "price_eur": 144.17,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2676,7 +2676,7 @@
       "name": "DaVita",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 148.46,
+      "price_eur": 148.28,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2693,7 +2693,7 @@
       "name": "Deckers Brands",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 78.04,
+      "price_eur": 77.95,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2710,7 +2710,7 @@
       "name": "Deere & Company",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 584.67,
+      "price_eur": 583.97,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2727,7 +2727,7 @@
       "name": "Dell Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 270.95,
+      "price_eur": 270.62,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2744,7 +2744,7 @@
       "name": "Delta Air Lines",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 75.66,
+      "price_eur": 75.57,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2761,7 +2761,7 @@
       "name": "Devon Energy",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 38.72,
+      "price_eur": 38.67,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2778,7 +2778,7 @@
       "name": "Dexcom",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 77.38,
+      "price_eur": 77.29,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -2795,7 +2795,7 @@
       "name": "Diamondback Energy",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 164.31,
+      "price_eur": 164.12,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2812,7 +2812,7 @@
       "name": "Digital Realty",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 151.8,
+      "price_eur": 151.62,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2829,7 +2829,7 @@
       "name": "Dollar General",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 127.03,
+      "price_eur": 126.87,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -2846,7 +2846,7 @@
       "name": "Dollar Tree",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 138.83,
+      "price_eur": 138.66,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -2863,7 +2863,7 @@
       "name": "Dominion Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 62.01,
+      "price_eur": 61.94,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2880,7 +2880,7 @@
       "name": "Domino's",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 329.75,
+      "price_eur": 329.35,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2897,7 +2897,7 @@
       "name": "DoorDash",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 151.77,
+      "price_eur": 151.59,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2914,7 +2914,7 @@
       "name": "Dover Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 187.3,
+      "price_eur": 187.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2931,7 +2931,7 @@
       "name": "Dow Inc.",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 27.05,
+      "price_eur": 27.02,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2948,7 +2948,7 @@
       "name": "D. R. Horton",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 143.08,
+      "price_eur": 142.91,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2965,7 +2965,7 @@
       "name": "DTE Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 125.65,
+      "price_eur": 125.5,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2982,7 +2982,7 @@
       "name": "Duke Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 120.31,
+      "price_eur": 120.16,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -2999,7 +2999,7 @@
       "name": "DuPont",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 140.12,
+      "price_eur": 139.95,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3016,7 +3016,7 @@
       "name": "Eaton Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 289.87,
+      "price_eur": 289.52,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3033,7 +3033,7 @@
       "name": "eBay Inc.",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 105.38,
+      "price_eur": 105.26,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3050,7 +3050,7 @@
       "name": "EchoStar",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 78.2,
+      "price_eur": 78.11,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3067,7 +3067,7 @@
       "name": "Ecolab",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 281.74,
+      "price_eur": 281.4,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3084,7 +3084,7 @@
       "name": "Edison International",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 57.82,
+      "price_eur": 57.75,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3101,7 +3101,7 @@
       "name": "Edwards Lifesciences",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 97.01,
+      "price_eur": 96.89,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3118,7 +3118,7 @@
       "name": "Elevance Health",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 355.45,
+      "price_eur": 355.02,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3135,7 +3135,7 @@
       "name": "Emcor",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 573.46,
+      "price_eur": 572.76,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3152,7 +3152,7 @@
       "name": "Emerson Electric",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 143.41,
+      "price_eur": 143.24,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3169,7 +3169,7 @@
       "name": "Entergy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 97.89,
+      "price_eur": 97.77,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3186,7 +3186,7 @@
       "name": "EOG Resources",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 135.27,
+      "price_eur": 135.11,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3203,7 +3203,7 @@
       "name": "EQT Corporation",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 47.0,
+      "price_eur": 46.94,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3220,7 +3220,7 @@
       "name": "Equifax",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 169.36,
+      "price_eur": 169.15,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3237,7 +3237,7 @@
       "name": "Equinix",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 892.23,
+      "price_eur": 891.16,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3254,7 +3254,7 @@
       "name": "Erie Indemnity",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 255.22,
+      "price_eur": 254.92,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3271,7 +3271,7 @@
       "name": "Essex Property Trust",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 254.67,
+      "price_eur": 254.36,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3288,7 +3288,7 @@
       "name": "Estée Lauder Companies (The)",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 99.98,
+      "price_eur": 99.85,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3305,7 +3305,7 @@
       "name": "Everest Group",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 395.52,
+      "price_eur": 395.05,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3322,7 +3322,7 @@
       "name": "Evergy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 80.06,
+      "price_eur": 79.96,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3339,7 +3339,7 @@
       "name": "Everpure",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 86.37,
+      "price_eur": 86.26,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3356,7 +3356,7 @@
       "name": "Eversource Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 66.17,
+      "price_eur": 66.09,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3373,7 +3373,7 @@
       "name": "Exelon",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 42.42,
+      "price_eur": 42.37,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3390,7 +3390,7 @@
       "name": "Expand Energy",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 79.14,
+      "price_eur": 79.05,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3407,7 +3407,7 @@
       "name": "Expedia Group",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 220.06,
+      "price_eur": 219.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3424,7 +3424,7 @@
       "name": "Expeditors International",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 180.77,
+      "price_eur": 180.55,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3441,7 +3441,7 @@
       "name": "Extra Space Storage",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 147.2,
+      "price_eur": 147.03,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3458,7 +3458,7 @@
       "name": "ExxonMobil",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 144.18,
+      "price_eur": 144.01,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3475,7 +3475,7 @@
       "name": "F5, Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 289.18,
+      "price_eur": 288.83,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3492,7 +3492,7 @@
       "name": "FactSet",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 296.02,
+      "price_eur": 295.67,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3509,7 +3509,7 @@
       "name": "Fair Isaac",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 638.3,
+      "price_eur": 637.53,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3526,7 +3526,7 @@
       "name": "Fastenal",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 48.28,
+      "price_eur": 48.22,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3543,7 +3543,7 @@
       "name": "Federal Realty Investment Trust",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 104.21,
+      "price_eur": 104.08,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3560,7 +3560,7 @@
       "name": "FedEx",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 281.72,
+      "price_eur": 281.38,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3577,7 +3577,7 @@
       "name": "Ferguson Enterprises",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 234.4,
+      "price_eur": 234.12,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3594,7 +3594,7 @@
       "name": "Fidelity National Information Services",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 25.21,
+      "price_eur": 25.18,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3611,7 +3611,7 @@
       "name": "Fifth Third Bancorp",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 47.16,
+      "price_eur": 47.11,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3628,7 +3628,7 @@
       "name": "First Solar",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 134.88,
+      "price_eur": 134.72,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3645,7 +3645,7 @@
       "name": "FirstEnergy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 43.43,
+      "price_eur": 43.38,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3662,7 +3662,7 @@
       "name": "Fiserv",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 54.53,
+      "price_eur": 54.46,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3679,7 +3679,7 @@
       "name": "Flex Ltd.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 61.32,
+      "price_eur": 61.25,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3696,7 +3696,7 @@
       "name": "Ford Motor Company",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 11.1,
+      "price_eur": 11.09,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3713,7 +3713,7 @@
       "name": "Fortinet",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 123.1,
+      "price_eur": 122.95,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3730,7 +3730,7 @@
       "name": "Fortive",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 60.3,
+      "price_eur": 60.23,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3747,7 +3747,7 @@
       "name": "Fox Corporation (Class A)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 58.95,
+      "price_eur": 58.88,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3764,7 +3764,7 @@
       "name": "Fox Corporation (Class B)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 52.89,
+      "price_eur": 52.83,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3781,7 +3781,7 @@
       "name": "Franklin Resources",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 30.65,
+      "price_eur": 30.61,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3798,7 +3798,7 @@
       "name": "Freeport-McMoRan",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 44.28,
+      "price_eur": 44.23,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3815,7 +3815,7 @@
       "name": "Garmin",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 255.16,
+      "price_eur": 254.85,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3832,7 +3832,7 @@
       "name": "Gartner",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 168.56,
+      "price_eur": 168.35,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -3849,7 +3849,7 @@
       "name": "GE Aerospace",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 289.12,
+      "price_eur": 288.77,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3866,7 +3866,7 @@
       "name": "GE HealthCare",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 76.01,
+      "price_eur": 75.91,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3883,7 +3883,7 @@
       "name": "GE Vernova",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 652.15,
+      "price_eur": 651.36,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3900,7 +3900,7 @@
       "name": "Gen Digital",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 27.52,
+      "price_eur": 27.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -3917,7 +3917,7 @@
       "name": "Generac",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 186.06,
+      "price_eur": 185.83,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3934,7 +3934,7 @@
       "name": "General Dynamics",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 328.6,
+      "price_eur": 328.21,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3951,7 +3951,7 @@
       "name": "General Mills",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 33.06,
+      "price_eur": 33.02,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -3968,7 +3968,7 @@
       "name": "General Motors",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 76.61,
+      "price_eur": 76.51,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -3985,7 +3985,7 @@
       "name": "Genuine Parts Company",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 112.99,
+      "price_eur": 112.85,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4002,7 +4002,7 @@
       "name": "Gilead Sciences",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 161.2,
+      "price_eur": 161.01,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4019,7 +4019,7 @@
       "name": "Global Payments",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 87.59,
+      "price_eur": 87.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4036,7 +4036,7 @@
       "name": "Globe Life",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 142.01,
+      "price_eur": 141.84,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4053,7 +4053,7 @@
       "name": "GoDaddy",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 95.9,
+      "price_eur": 95.78,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4070,7 +4070,7 @@
       "name": "Goldman Sachs",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 730.62,
+      "price_eur": 729.74,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4087,7 +4087,7 @@
       "name": "Halliburton",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 28.83,
+      "price_eur": 28.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4104,7 +4104,7 @@
       "name": "Hartford (The)",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 127.49,
+      "price_eur": 127.34,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4121,7 +4121,7 @@
       "name": "Hasbro",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 100.86,
+      "price_eur": 100.74,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4138,7 +4138,7 @@
       "name": "HCA Healthcare",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 447.85,
+      "price_eur": 447.31,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4155,7 +4155,7 @@
       "name": "Healthpeak Properties",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 18.89,
+      "price_eur": 18.87,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4172,7 +4172,7 @@
       "name": "Henry Schein",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 80.93,
+      "price_eur": 80.83,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4189,7 +4189,7 @@
       "name": "Hershey Company (The)",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 166.52,
+      "price_eur": 166.32,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4206,7 +4206,7 @@
       "name": "Hewlett Packard Enterprise",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 37.23,
+      "price_eur": 37.19,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4223,7 +4223,7 @@
       "name": "Hilton Worldwide",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 334.01,
+      "price_eur": 333.61,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4240,7 +4240,7 @@
       "name": "Home Depot (The)",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 329.51,
+      "price_eur": 329.11,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4257,7 +4257,7 @@
       "name": "Honeywell Technologies",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 205.31,
+      "price_eur": 205.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4274,7 +4274,7 @@
       "name": "Hormel Foods",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 21.06,
+      "price_eur": 21.03,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4291,7 +4291,7 @@
       "name": "Host Hotels & Resorts",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 22.69,
+      "price_eur": 22.67,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4308,7 +4308,7 @@
       "name": "Howmet Aerospace",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 192.52,
+      "price_eur": 192.28,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4325,7 +4325,7 @@
       "name": "HP Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 28.41,
+      "price_eur": 28.38,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4342,7 +4342,7 @@
       "name": "Hubbell Incorporated",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 391.05,
+      "price_eur": 390.58,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4359,7 +4359,7 @@
       "name": "Humana",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 370.78,
+      "price_eur": 370.33,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4376,7 +4376,7 @@
       "name": "Huntington Bancshares",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 13.57,
+      "price_eur": 13.56,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4393,7 +4393,7 @@
       "name": "Huntington Ingalls Industries",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 273.03,
+      "price_eur": 272.7,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4410,7 +4410,7 @@
       "name": "IBM",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 222.07,
+      "price_eur": 221.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4427,7 +4427,7 @@
       "name": "IDEX Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 205.45,
+      "price_eur": 205.2,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4444,7 +4444,7 @@
       "name": "Idexx Laboratories",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 647.1,
+      "price_eur": 646.32,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4461,7 +4461,7 @@
       "name": "Illinois Tool Works",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 260.02,
+      "price_eur": 259.71,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4478,7 +4478,7 @@
       "name": "Illumina, Inc.",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 182.78,
+      "price_eur": 182.56,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4495,7 +4495,7 @@
       "name": "Incyte",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 111.6,
+      "price_eur": 111.46,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4512,7 +4512,7 @@
       "name": "Ingersoll Rand",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 75.83,
+      "price_eur": 75.74,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4529,7 +4529,7 @@
       "name": "Insulet Corporation",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 130.14,
+      "price_eur": 129.98,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4546,7 +4546,7 @@
       "name": "Intel",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 49.68,
+      "price_eur": 49.62,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4563,7 +4563,7 @@
       "name": "Interactive Brokers",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 68.17,
+      "price_eur": 68.09,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4580,7 +4580,7 @@
       "name": "Intercontinental Exchange",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 162.18,
+      "price_eur": 161.98,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4597,7 +4597,7 @@
       "name": "International Flavors & Fragrances",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 78.54,
+      "price_eur": 78.45,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4614,7 +4614,7 @@
       "name": "International Paper",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 29.26,
+      "price_eur": 29.22,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4631,7 +4631,7 @@
       "name": "Intuit",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 247.84,
+      "price_eur": 247.54,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4648,7 +4648,7 @@
       "name": "Intuitive Surgical",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 389.63,
+      "price_eur": 389.16,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4665,7 +4665,7 @@
       "name": "Invesco",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 25.63,
+      "price_eur": 25.6,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4682,7 +4682,7 @@
       "name": "Invitation Homes",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 25.37,
+      "price_eur": 25.34,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4699,7 +4699,7 @@
       "name": "IQVIA",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 229.05,
+      "price_eur": 228.77,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4716,7 +4716,7 @@
       "name": "Iron Mountain",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 94.91,
+      "price_eur": 94.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4733,7 +4733,7 @@
       "name": "J.B. Hunt",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 207.89,
+      "price_eur": 207.64,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4750,7 +4750,7 @@
       "name": "Jabil",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 208.09,
+      "price_eur": 207.84,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4767,7 +4767,7 @@
       "name": "Jack Henry & Associates",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 166.08,
+      "price_eur": 165.87,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -4784,7 +4784,7 @@
       "name": "Jacobs Solutions",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 132.7,
+      "price_eur": 132.54,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4801,7 +4801,7 @@
       "name": "Johnson & Johnson",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 249.86,
+      "price_eur": 249.56,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -4818,7 +4818,7 @@
       "name": "Johnson Controls",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 124.5,
+      "price_eur": 124.35,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4835,7 +4835,7 @@
       "name": "JPMorgan Chase",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 288.9,
+      "price_eur": 288.55,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4852,7 +4852,7 @@
       "name": "Keurig Dr Pepper",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 32.5,
+      "price_eur": 32.46,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4869,7 +4869,7 @@
       "name": "KeyCorp",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 18.44,
+      "price_eur": 18.42,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4886,7 +4886,7 @@
       "name": "Keysight Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 244.16,
+      "price_eur": 243.87,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4903,7 +4903,7 @@
       "name": "Kimberly-Clark",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 99.83,
+      "price_eur": 99.71,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4920,7 +4920,7 @@
       "name": "Kimco Realty",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 23.76,
+      "price_eur": 23.73,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -4937,7 +4937,7 @@
       "name": "Kinder Morgan",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 28.9,
+      "price_eur": 28.87,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4954,7 +4954,7 @@
       "name": "KKR & Co.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 85.83,
+      "price_eur": 85.73,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4971,7 +4971,7 @@
       "name": "KLA Corporation",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 122.4,
+      "price_eur": 122.26,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -4988,7 +4988,7 @@
       "name": "Kraft Heinz",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 24.18,
+      "price_eur": 24.15,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5005,7 +5005,7 @@
       "name": "Kroger",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 63.69,
+      "price_eur": 63.62,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5022,7 +5022,7 @@
       "name": "L3Harris",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 238.87,
+      "price_eur": 238.58,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5039,7 +5039,7 @@
       "name": "Labcorp",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 336.52,
+      "price_eur": 336.11,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5056,7 +5056,7 @@
       "name": "Lam Research",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 168.75,
+      "price_eur": 168.54,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5073,7 +5073,7 @@
       "name": "Las Vegas Sands",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 36.27,
+      "price_eur": 36.22,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5090,7 +5090,7 @@
       "name": "Leidos",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 119.14,
+      "price_eur": 118.99,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5107,7 +5107,7 @@
       "name": "Lennar",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 79.16,
+      "price_eur": 79.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5124,7 +5124,7 @@
       "name": "Lennox International",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 319.21,
+      "price_eur": 318.82,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5141,7 +5141,7 @@
       "name": "Lilly (Eli)",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 1269.84,
+      "price_eur": 1268.31,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5158,7 +5158,7 @@
       "name": "Linde plc",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 478.5,
+      "price_eur": 477.92,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5175,7 +5175,7 @@
       "name": "Live Nation Entertainment",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 165.76,
+      "price_eur": 165.56,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5192,7 +5192,7 @@
       "name": "Lockheed Martin",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 546.57,
+      "price_eur": 545.91,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5209,7 +5209,7 @@
       "name": "Loews Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 101.35,
+      "price_eur": 101.23,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5226,7 +5226,7 @@
       "name": "Lowe's",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 214.94,
+      "price_eur": 214.68,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5243,7 +5243,7 @@
       "name": "Lululemon Athletica",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 98.0,
+      "price_eur": 97.88,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5260,7 +5260,7 @@
       "name": "Lumentum",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 434.69,
+      "price_eur": 434.16,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5277,7 +5277,7 @@
       "name": "LyondellBasell",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 51.95,
+      "price_eur": 51.89,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5294,7 +5294,7 @@
       "name": "M&T Bank",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 196.56,
+      "price_eur": 196.32,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5311,7 +5311,7 @@
       "name": "Marathon Petroleum",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 315.83,
+      "price_eur": 315.45,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -5328,7 +5328,7 @@
       "name": "Marriott International",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 379.22,
+      "price_eur": 378.77,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5345,7 +5345,7 @@
       "name": "Marsh McLennan",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 197.62,
+      "price_eur": 197.38,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5362,7 +5362,7 @@
       "name": "Martin Marietta Materials",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 489.38,
+      "price_eur": 488.79,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5379,7 +5379,7 @@
       "name": "Marvell Technology",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 119.42,
+      "price_eur": 119.28,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5396,7 +5396,7 @@
       "name": "Masco",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 79.29,
+      "price_eur": 79.19,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5413,7 +5413,7 @@
       "name": "Mastercard",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 601.96,
+      "price_eur": 601.23,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5430,7 +5430,7 @@
       "name": "McCormick & Company",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 45.47,
+      "price_eur": 45.41,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5447,7 +5447,7 @@
       "name": "McDonald's",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 258.58,
+      "price_eur": 258.27,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5464,7 +5464,7 @@
       "name": "McKesson",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 982.62,
+      "price_eur": 981.44,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5481,7 +5481,7 @@
       "name": "Medtronic",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 87.62,
+      "price_eur": 87.51,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5498,7 +5498,7 @@
       "name": "Merck & Co.",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 127.96,
+      "price_eur": 127.8,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5515,7 +5515,7 @@
       "name": "Meta Platforms",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 556.28,
+      "price_eur": 555.61,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5532,7 +5532,7 @@
       "name": "MetLife",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 91.01,
+      "price_eur": 90.9,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5549,7 +5549,7 @@
       "name": "Mettler Toledo",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 1518.24,
+      "price_eur": 1516.41,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5566,7 +5566,7 @@
       "name": "MGM Resorts",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 31.6,
+      "price_eur": 31.57,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5583,7 +5583,7 @@
       "name": "Microchip Technology",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 52.59,
+      "price_eur": 52.53,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5600,7 +5600,7 @@
       "name": "Micron Technology",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 548.4,
+      "price_eur": 547.74,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5617,7 +5617,7 @@
       "name": "Microsoft",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 446.87,
+      "price_eur": 446.33,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -5634,7 +5634,7 @@
       "name": "Mid-America Apartment Communities",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 107.26,
+      "price_eur": 107.13,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5651,7 +5651,7 @@
       "name": "Moderna",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 201.43,
+      "price_eur": 201.19,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5668,7 +5668,7 @@
       "name": "Mondelez International",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 61.85,
+      "price_eur": 61.77,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5685,7 +5685,7 @@
       "name": "Monolithic Power Systems",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 1089.62,
+      "price_eur": 1088.31,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5702,7 +5702,7 @@
       "name": "Monster Beverage",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 38.86,
+      "price_eur": 38.81,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5719,7 +5719,7 @@
       "name": "Moody's Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 443.0,
+      "price_eur": 442.46,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -5736,7 +5736,7 @@
       "name": "Morgan Stanley",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 152.82,
+      "price_eur": 152.64,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5753,7 +5753,7 @@
       "name": "Mosaic Company (The)",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 18.56,
+      "price_eur": 18.54,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5770,7 +5770,7 @@
       "name": "Motorola Solutions",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 493.45,
+      "price_eur": 492.85,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -5787,7 +5787,7 @@
       "name": "MSCI",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 577.36,
+      "price_eur": 576.66,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5804,7 +5804,7 @@
       "name": "Nasdaq, Inc.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 97.66,
+      "price_eur": 97.54,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -5821,7 +5821,7 @@
       "name": "NetApp",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 150.5,
+      "price_eur": 150.31,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -5838,7 +5838,7 @@
       "name": "Netflix",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 54.19,
+      "price_eur": 54.12,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5855,7 +5855,7 @@
       "name": "Newmont",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 92.52,
+      "price_eur": 92.41,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5872,7 +5872,7 @@
       "name": "News Corp (Class A)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 23.79,
+      "price_eur": 23.76,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5889,7 +5889,7 @@
       "name": "News Corp (Class B)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 26.4,
+      "price_eur": 26.36,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5906,7 +5906,7 @@
       "name": "NextEra Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 77.9,
+      "price_eur": 77.81,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5923,7 +5923,7 @@
       "name": "Nike, Inc.",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 33.44,
+      "price_eur": 33.4,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5940,7 +5940,7 @@
       "name": "NiSource",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 41.14,
+      "price_eur": 41.1,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -5957,7 +5957,7 @@
       "name": "Nordson Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 292.8,
+      "price_eur": 292.45,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -5974,7 +5974,7 @@
       "name": "Norfolk Southern",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 297.81,
+      "price_eur": 297.45,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -5991,7 +5991,7 @@
       "name": "Northern Trust",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 153.24,
+      "price_eur": 153.06,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6008,7 +6008,7 @@
       "name": "Northrop Grumman",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 506.94,
+      "price_eur": 506.32,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6025,7 +6025,7 @@
       "name": "Norwegian Cruise Line Holdings",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 15.51,
+      "price_eur": 15.49,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6042,7 +6042,7 @@
       "name": "NRG Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 83.86,
+      "price_eur": 83.76,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6059,7 +6059,7 @@
       "name": "Nucor",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 226.51,
+      "price_eur": 226.24,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6076,7 +6076,7 @@
       "name": "Nvidia",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 136.18,
+      "price_eur": 136.01,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6093,7 +6093,7 @@
       "name": "NVR, Inc.",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 5488.08,
+      "price_eur": 5481.46,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6110,7 +6110,7 @@
       "name": "NXP Semiconductors",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 221.6,
+      "price_eur": 221.34,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6127,7 +6127,7 @@
       "name": "O'Reilly Automotive",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 88.19,
+      "price_eur": 88.08,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6144,7 +6144,7 @@
       "name": "Occidental Petroleum",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 49.21,
+      "price_eur": 49.15,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6161,7 +6161,7 @@
       "name": "Okta, Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 184.03,
+      "price_eur": 183.81,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6178,7 +6178,7 @@
       "name": "Old Dominion",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 159.31,
+      "price_eur": 159.12,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6195,7 +6195,7 @@
       "name": "Omnicom Group",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 82.73,
+      "price_eur": 82.63,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6212,7 +6212,7 @@
       "name": "ON Semiconductor",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 56.99,
+      "price_eur": 56.92,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6229,7 +6229,7 @@
       "name": "Oneok",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 78.85,
+      "price_eur": 78.76,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6246,7 +6246,7 @@
       "name": "Oracle Corporation",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 94.75,
+      "price_eur": 94.63,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6263,7 +6263,7 @@
       "name": "Otis Worldwide",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 71.96,
+      "price_eur": 71.88,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6280,7 +6280,7 @@
       "name": "Paccar",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 98.46,
+      "price_eur": 98.34,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6297,7 +6297,7 @@
       "name": "Packaging Corporation of America",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 225.17,
+      "price_eur": 224.9,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6314,7 +6314,7 @@
       "name": "Palantir Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 149.21,
+      "price_eur": 149.03,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6331,7 +6331,7 @@
       "name": "Palo Alto Networks",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 324.84,
+      "price_eur": 324.44,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6348,7 +6348,7 @@
       "name": "Parker Hannifin",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 818.97,
+      "price_eur": 817.99,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6365,7 +6365,7 @@
       "name": "Paychex",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 108.07,
+      "price_eur": 107.94,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6382,7 +6382,7 @@
       "name": "PayPal",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 52.73,
+      "price_eur": 52.66,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6399,7 +6399,7 @@
       "name": "Pentair",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 66.47,
+      "price_eur": 66.39,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6416,7 +6416,7 @@
       "name": "PepsiCo",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 131.28,
+      "price_eur": 131.12,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6433,7 +6433,7 @@
       "name": "Pfizer",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 25.96,
+      "price_eur": 25.93,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6450,7 +6450,7 @@
       "name": "PG&E Corporation",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 13.01,
+      "price_eur": 12.99,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6467,7 +6467,7 @@
       "name": "Philip Morris International",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 168.12,
+      "price_eur": 167.92,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6484,7 +6484,7 @@
       "name": "Phillips 66",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 215.33,
+      "price_eur": 215.07,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6501,7 +6501,7 @@
       "name": "Pinnacle West Capital",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 94.17,
+      "price_eur": 94.05,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6518,7 +6518,7 @@
       "name": "PNC Financial Services",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 200.96,
+      "price_eur": 200.72,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6535,7 +6535,7 @@
       "name": "PPG Industries",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 113.66,
+      "price_eur": 113.52,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6552,7 +6552,7 @@
       "name": "PPL Corporation",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 32.27,
+      "price_eur": 32.23,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6569,7 +6569,7 @@
       "name": "Principal Financial Group",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 99.46,
+      "price_eur": 99.34,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6586,7 +6586,7 @@
       "name": "Procter & Gamble",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 158.0,
+      "price_eur": 157.81,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6603,7 +6603,7 @@
       "name": "Progressive Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 217.72,
+      "price_eur": 217.46,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6620,7 +6620,7 @@
       "name": "Prologis",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 115.86,
+      "price_eur": 115.72,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6637,7 +6637,7 @@
       "name": "Prudential Financial",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 109.65,
+      "price_eur": 109.52,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6654,7 +6654,7 @@
       "name": "PTC Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 178.77,
+      "price_eur": 178.56,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6671,7 +6671,7 @@
       "name": "Public Service Enterprise Group",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 68.58,
+      "price_eur": 68.5,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6688,7 +6688,7 @@
       "name": "Public Storage",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 308.27,
+      "price_eur": 307.9,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6705,7 +6705,7 @@
       "name": "PulteGroup",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 122.99,
+      "price_eur": 122.84,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6722,7 +6722,7 @@
       "name": "Qnity Electronics",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 98.89,
+      "price_eur": 98.77,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6739,7 +6739,7 @@
       "name": "Qualcomm",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 153.83,
+      "price_eur": 153.65,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6756,7 +6756,7 @@
       "name": "Quanta Services",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 515.77,
+      "price_eur": 515.14,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6773,7 +6773,7 @@
       "name": "Quest Diagnostics",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 242.29,
+      "price_eur": 242.0,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6790,7 +6790,7 @@
       "name": "Ralph Lauren Corporation",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 365.49,
+      "price_eur": 365.05,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6807,7 +6807,7 @@
       "name": "Raymond James Financial",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 148.53,
+      "price_eur": 148.35,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6824,7 +6824,7 @@
       "name": "Reddit",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 83.47,
+      "price_eur": 83.37,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6841,7 +6841,7 @@
       "name": "Realty Income",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 54.95,
+      "price_eur": 54.89,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6858,7 +6858,7 @@
       "name": "Regency Centers",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 68.88,
+      "price_eur": 68.8,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6875,7 +6875,7 @@
       "name": "Regeneron Pharmaceuticals",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 895.56,
+      "price_eur": 894.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6892,7 +6892,7 @@
       "name": "Regions Financial Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 25.34,
+      "price_eur": 25.31,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6909,7 +6909,7 @@
       "name": "Republic Services",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 231.82,
+      "price_eur": 231.54,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -6926,7 +6926,7 @@
       "name": "ResMed",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 224.1,
+      "price_eur": 223.83,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -6943,7 +6943,7 @@
       "name": "Revvity",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 137.56,
+      "price_eur": 137.4,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -6960,7 +6960,7 @@
       "name": "Robinhood Markets",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 60.0,
+      "price_eur": 59.93,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6977,7 +6977,7 @@
       "name": "Rockwell Automation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 351.08,
+      "price_eur": 350.65,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -6994,7 +6994,7 @@
       "name": "Rollins, Inc.",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 35.07,
+      "price_eur": 35.03,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7011,7 +7011,7 @@
       "name": "Roper Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 440.63,
+      "price_eur": 440.09,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7028,7 +7028,7 @@
       "name": "Ross Stores",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 203.64,
+      "price_eur": 203.39,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7045,7 +7045,7 @@
       "name": "Royal Caribbean Group",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 286.5,
+      "price_eur": 286.15,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7062,7 +7062,7 @@
       "name": "RTX Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 178.94,
+      "price_eur": 178.73,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7079,7 +7079,7 @@
       "name": "S&P Global",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 420.24,
+      "price_eur": 419.73,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7096,7 +7096,7 @@
       "name": "Salesforce",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 179.88,
+      "price_eur": 179.66,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7113,7 +7113,7 @@
       "name": "Sandisk",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 86.09,
+      "price_eur": 85.99,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7130,7 +7130,7 @@
       "name": "SBA Communications",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 159.37,
+      "price_eur": 159.18,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7147,7 +7147,7 @@
       "name": "Schlumberger",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 44.26,
+      "price_eur": 44.2,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7164,7 +7164,7 @@
       "name": "Seagate Technology",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 430.81,
+      "price_eur": 430.29,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7181,7 +7181,7 @@
       "name": "Sempra",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 72.14,
+      "price_eur": 72.05,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7198,7 +7198,7 @@
       "name": "ServiceNow",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 84.06,
+      "price_eur": 83.96,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7215,7 +7215,7 @@
       "name": "Sherwin-Williams",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 329.29,
+      "price_eur": 328.89,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7232,7 +7232,7 @@
       "name": "Simon Property Group",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 213.41,
+      "price_eur": 213.16,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7249,7 +7249,7 @@
       "name": "Skydance",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 5.96,
+      "price_eur": 5.95,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7266,7 +7266,7 @@
       "name": "Skyworks Solutions",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 74.8,
+      "price_eur": 74.71,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7283,7 +7283,7 @@
       "name": "J.M. Smucker Company (The)",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 118.63,
+      "price_eur": 118.48,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7300,7 +7300,7 @@
       "name": "Smurfit Westrock",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 37.99,
+      "price_eur": 37.94,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7317,7 +7317,7 @@
       "name": "Snap-on",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 328.76,
+      "price_eur": 328.36,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7334,7 +7334,7 @@
       "name": "Solventum",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 79.5,
+      "price_eur": 79.4,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7351,7 +7351,7 @@
       "name": "Southern Company",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 86.65,
+      "price_eur": 86.54,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7368,7 +7368,7 @@
       "name": "Southwest Airlines",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 41.91,
+      "price_eur": 41.86,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7385,7 +7385,7 @@
       "name": "Stanley Black & Decker",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 99.62,
+      "price_eur": 99.5,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7402,7 +7402,7 @@
       "name": "Starbucks",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 98.27,
+      "price_eur": 98.15,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7419,7 +7419,7 @@
       "name": "State Street Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 147.79,
+      "price_eur": 147.61,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7436,7 +7436,7 @@
       "name": "Steel Dynamics",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 197.8,
+      "price_eur": 197.56,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7453,7 +7453,7 @@
       "name": "Steris",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 238.21,
+      "price_eur": 237.93,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -7470,7 +7470,7 @@
       "name": "Stryker Corporation",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 303.64,
+      "price_eur": 303.27,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7487,7 +7487,7 @@
       "name": "Supermicro",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 21.26,
+      "price_eur": 21.24,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7504,7 +7504,7 @@
       "name": "Synchrony Financial",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 62.69,
+      "price_eur": 62.61,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7521,7 +7521,7 @@
       "name": "Synopsys",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 369.48,
+      "price_eur": 369.04,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7538,7 +7538,7 @@
       "name": "Sysco",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 74.58,
+      "price_eur": 74.49,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7555,7 +7555,7 @@
       "name": "T-Mobile US",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 151.64,
+      "price_eur": 151.45,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7572,7 +7572,7 @@
       "name": "T. Rowe Price",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 94.45,
+      "price_eur": 94.33,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7589,7 +7589,7 @@
       "name": "Take-Two Interactive",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 207.36,
+      "price_eur": 207.11,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7606,7 +7606,7 @@
       "name": "Tapestry, Inc.",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 118.21,
+      "price_eur": 118.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7623,7 +7623,7 @@
       "name": "Targa Resources",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 260.43,
+      "price_eur": 260.12,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7640,7 +7640,7 @@
       "name": "Target Corporation",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 157.08,
+      "price_eur": 156.89,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7657,7 +7657,7 @@
       "name": "TE Connectivity",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 192.89,
+      "price_eur": 192.66,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7674,7 +7674,7 @@
       "name": "Teledyne Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 573.82,
+      "price_eur": 573.13,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7691,7 +7691,7 @@
       "name": "Teradyne",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 193.5,
+      "price_eur": 193.27,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7708,7 +7708,7 @@
       "name": "Tesla, Inc.",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 346.73,
+      "price_eur": 346.31,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7725,7 +7725,7 @@
       "name": "Texas Instruments",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 246.44,
+      "price_eur": 246.14,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7742,7 +7742,7 @@
       "name": "Texas Pacific Land Corporation",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 238.4,
+      "price_eur": 238.11,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7759,7 +7759,7 @@
       "name": "Textron",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 73.77,
+      "price_eur": 73.68,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7776,7 +7776,7 @@
       "name": "Thermo Fisher Scientific",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 625.26,
+      "price_eur": 624.51,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7793,7 +7793,7 @@
       "name": "TJX Companies",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 133.25,
+      "price_eur": 133.09,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7810,7 +7810,7 @@
       "name": "TKO Group Holdings",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 174.61,
+      "price_eur": 174.4,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7827,7 +7827,7 @@
       "name": "Tractor Supply",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 36.82,
+      "price_eur": 36.78,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7844,7 +7844,7 @@
       "name": "Trane Technologies",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 368.01,
+      "price_eur": 367.57,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7861,7 +7861,7 @@
       "name": "TransDigm Group",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 1049.58,
+      "price_eur": 1048.31,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7878,7 +7878,7 @@
       "name": "Travelers Companies (The)",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 371.1,
+      "price_eur": 370.65,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7895,7 +7895,7 @@
       "name": "Trimble Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 50.39,
+      "price_eur": 50.33,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7912,7 +7912,7 @@
       "name": "Truist Financial",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 43.68,
+      "price_eur": 43.63,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7929,7 +7929,7 @@
       "name": "Twilio",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 164.9,
+      "price_eur": 164.7,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7946,7 +7946,7 @@
       "name": "Tyler Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 383.34,
+      "price_eur": 382.88,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -7963,7 +7963,7 @@
       "name": "Tyson Foods",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 57.94,
+      "price_eur": 57.87,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -7980,7 +7980,7 @@
       "name": "U.S. Bancorp",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 53.4,
+      "price_eur": 53.34,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -7997,7 +7997,7 @@
       "name": "Uber",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 60.52,
+      "price_eur": 60.44,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8014,7 +8014,7 @@
       "name": "UDR, Inc.",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 33.45,
+      "price_eur": 33.41,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8031,7 +8031,7 @@
       "name": "Ulta Beauty",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 586.15,
+      "price_eur": 585.45,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8048,7 +8048,7 @@
       "name": "Union Pacific Corporation",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 272.15,
+      "price_eur": 271.82,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8065,7 +8065,7 @@
       "name": "United Airlines Holdings",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 95.33,
+      "price_eur": 95.22,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8082,7 +8082,7 @@
       "name": "United Parcel Service",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 101.67,
+      "price_eur": 101.55,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8099,7 +8099,7 @@
       "name": "United Rentals",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 926.44,
+      "price_eur": 925.32,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8116,7 +8116,7 @@
       "name": "UnitedHealth Group",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 315.76,
+      "price_eur": 315.38,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8133,7 +8133,7 @@
       "name": "Universal Health Services",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 173.82,
+      "price_eur": 173.61,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8150,7 +8150,7 @@
       "name": "Valero Energy",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 294.61,
+      "price_eur": 294.25,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -8167,7 +8167,7 @@
       "name": "Veeva Systems",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 248.0,
+      "price_eur": 247.7,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -8184,7 +8184,7 @@
       "name": "Ventas",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 79.68,
+      "price_eur": 79.58,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8201,7 +8201,7 @@
       "name": "Veralto",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 109.63,
+      "price_eur": 109.49,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8218,7 +8218,7 @@
       "name": "Verisign",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 291.39,
+      "price_eur": 291.04,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8235,7 +8235,7 @@
       "name": "Verisk Analytics",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 186.76,
+      "price_eur": 186.54,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8252,7 +8252,7 @@
       "name": "Verizon",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 43.12,
+      "price_eur": 43.07,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8269,7 +8269,7 @@
       "name": "Vertex Pharmaceuticals",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 514.53,
+      "price_eur": 513.91,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8286,7 +8286,7 @@
       "name": "Vertiv",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 158.13,
+      "price_eur": 157.94,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8303,7 +8303,7 @@
       "name": "Viatris",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 18.09,
+      "price_eur": 18.07,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8320,7 +8320,7 @@
       "name": "Vici Properties",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 22.91,
+      "price_eur": 22.88,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8337,7 +8337,7 @@
       "name": "Visa Inc.",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 387.09,
+      "price_eur": 386.62,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8354,7 +8354,7 @@
       "name": "Vistra Corp.",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 110.66,
+      "price_eur": 110.52,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8371,7 +8371,7 @@
       "name": "Vivmark Residential",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 59.59,
+      "price_eur": 59.52,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8388,7 +8388,7 @@
       "name": "Vulcan Materials Company",
       "sector": "Materials",
       "asset_class": "aktie",
-      "price_eur": 265.4,
+      "price_eur": 265.08,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8405,7 +8405,7 @@
       "name": "W. R. Berkley Corporation",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 72.37,
+      "price_eur": 72.28,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8422,7 +8422,7 @@
       "name": "W. W. Grainger",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 1291.44,
+      "price_eur": 1289.88,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8439,7 +8439,7 @@
       "name": "Wabtec",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 262.31,
+      "price_eur": 261.99,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -8456,7 +8456,7 @@
       "name": "Walmart",
       "sector": "Consumer Staples",
       "asset_class": "aktie",
-      "price_eur": 120.34,
+      "price_eur": 120.2,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8473,7 +8473,7 @@
       "name": "Walt Disney Company (The)",
       "sector": "Communication Services",
       "asset_class": "aktie",
-      "price_eur": 114.56,
+      "price_eur": 114.42,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8490,7 +8490,7 @@
       "name": "Waste Management",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 225.55,
+      "price_eur": 225.28,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8507,7 +8507,7 @@
       "name": "Waters Corporation",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 414.94,
+      "price_eur": 414.44,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8524,7 +8524,7 @@
       "name": "WEC Energy Group",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 108.62,
+      "price_eur": 108.49,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8541,7 +8541,7 @@
       "name": "Wells Fargo",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 73.83,
+      "price_eur": 73.74,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8558,7 +8558,7 @@
       "name": "Welltower",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 224.54,
+      "price_eur": 224.27,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8575,7 +8575,7 @@
       "name": "West Pharmaceutical Services",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 340.16,
+      "price_eur": 339.75,
       "cluster": "B",
       "cluster_reason": "Ruecksetzer im intakten Aufwaertstrend: nahe SMA50 oder RSI unter 40."
     },
@@ -8592,7 +8592,7 @@
       "name": "Western Digital",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 248.5,
+      "price_eur": 248.2,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8609,7 +8609,7 @@
       "name": "Weyerhaeuser",
       "sector": "Real Estate",
       "asset_class": "aktie",
-      "price_eur": 18.72,
+      "price_eur": 18.69,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8626,7 +8626,7 @@
       "name": "Williams-Sonoma, Inc.",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 193.72,
+      "price_eur": 193.49,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8643,7 +8643,7 @@
       "name": "Williams Companies",
       "sector": "Energy",
       "asset_class": "aktie",
-      "price_eur": 60.61,
+      "price_eur": 60.54,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8660,7 +8660,7 @@
       "name": "Willis Towers Watson",
       "sector": "Financials",
       "asset_class": "aktie",
-      "price_eur": 321.57,
+      "price_eur": 321.18,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8677,7 +8677,7 @@
       "name": "Workday, Inc.",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 164.58,
+      "price_eur": 164.38,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8694,7 +8694,7 @@
       "name": "Wynn Resorts",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 78.51,
+      "price_eur": 78.42,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8711,7 +8711,7 @@
       "name": "Xcel Energy",
       "sector": "Utilities",
       "asset_class": "aktie",
-      "price_eur": 73.98,
+      "price_eur": 73.89,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8728,7 +8728,7 @@
       "name": "Xylem Inc.",
       "sector": "Industrials",
       "asset_class": "aktie",
-      "price_eur": 87.94,
+      "price_eur": 87.84,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8745,7 +8745,7 @@
       "name": "Yum! Brands",
       "sector": "Consumer Discretionary",
       "asset_class": "aktie",
-      "price_eur": 152.43,
+      "price_eur": 152.25,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
@@ -8762,7 +8762,7 @@
       "name": "Zebra Technologies",
       "sector": "Information Technology",
       "asset_class": "aktie",
-      "price_eur": 290.39,
+      "price_eur": 290.04,
       "cluster": "C",
       "cluster_reason": "Kein klarer Trend."
     },
@@ -8779,7 +8779,7 @@
       "name": "Zimmer Biomet",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 100.39,
+      "price_eur": 100.26,
       "cluster": "A",
       "cluster_reason": "Starker Trend: Kurs ueber SMA50/SMA200, Momentum unter den staerksten 20% des Universums, staerker als der S&P 500."
     },
@@ -8796,75 +8796,75 @@
       "name": "Zoetis",
       "sector": "Health Care",
       "asset_class": "aktie",
-      "price_eur": 75.34,
+      "price_eur": 75.25,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
     {
       "symbol": "BTC-USD",
-      "price_usd": 60844.82,
-      "sma50": 75143.5,
-      "sma200": 72030.79,
-      "rsi14": 29.3,
-      "atr14": 2870.28,
-      "momentum_pct": -8.0,
-      "rel_strength_pct": -3.4,
-      "dist_to_sma50_pct": -19.0,
+      "price_usd": 61394.1,
+      "sma50": 74696.53,
+      "sma200": 71924.73,
+      "rsi14": 31.6,
+      "atr14": 2883.32,
+      "momentum_pct": -5.6,
+      "rel_strength_pct": -1.1,
+      "dist_to_sma50_pct": -17.8,
       "name": "Bitcoin",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 55496.56,
+      "price_eur": 55930.02,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
     {
       "symbol": "ETH-USD",
-      "price_usd": 1699.63,
-      "sma50": 2185.07,
-      "sma200": 2113.08,
-      "rsi14": 30.5,
-      "atr14": 101.91,
-      "momentum_pct": -12.1,
-      "rel_strength_pct": -7.6,
-      "dist_to_sma50_pct": -22.2,
+      "price_usd": 1727.18,
+      "sma50": 2167.97,
+      "sma200": 2109.82,
+      "rsi14": 33.5,
+      "atr14": 101.86,
+      "momentum_pct": -8.0,
+      "rel_strength_pct": -3.4,
+      "dist_to_sma50_pct": -20.3,
       "name": "Ethereum",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 1550.23,
+      "price_eur": 1573.46,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
     {
       "symbol": "SOL-USD",
-      "price_usd": 71.09,
-      "sma50": 92.2,
-      "sma200": 88.02,
-      "rsi14": 32.7,
-      "atr14": 4.35,
-      "momentum_pct": -8.7,
-      "rel_strength_pct": -4.2,
-      "dist_to_sma50_pct": -22.9,
+      "price_usd": 72.5,
+      "sma50": 91.31,
+      "sma200": 87.89,
+      "rsi14": 36.2,
+      "atr14": 4.44,
+      "momentum_pct": -4.4,
+      "rel_strength_pct": 0.1,
+      "dist_to_sma50_pct": -20.6,
       "name": "Solana",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 64.84,
+      "price_eur": 66.05,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     },
     {
       "symbol": "XRP-USD",
       "price_usd": 0.96,
-      "sma50": 1.19,
+      "sma50": 1.18,
       "sma200": 1.23,
-      "rsi14": 36.6,
+      "rsi14": 36.9,
       "atr14": 0.06,
-      "momentum_pct": -16.1,
-      "rel_strength_pct": -11.5,
-      "dist_to_sma50_pct": -19.5,
+      "momentum_pct": -13.4,
+      "rel_strength_pct": -8.8,
+      "dist_to_sma50_pct": -18.8,
       "name": "XRP",
       "sector": "Krypto",
       "asset_class": "krypto",
-      "price_eur": 0.88,
+      "price_eur": 0.87,
       "cluster": "D",
       "cluster_reason": "Trendbruch: Kurs unter SMA200 (2 Tage bestaetigt), SMA50 unter SMA200 oder negatives 6-Monats-Momentum."
     }
